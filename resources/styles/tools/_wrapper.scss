@@ -1,0 +1,10 @@
+@mixin wide-width() {
+  margin-left: calc(-90vw / 2 + 100% / 2);
+  margin-right: calc(-90vw / 2 + 100% / 2);
+}
+
+@mixin bleed-width() {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: 100vw;
+}

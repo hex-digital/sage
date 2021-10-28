@@ -1,6 +1,8 @@
 const mix = require('laravel-mix');
+const path = require('path');
 require('@tinypixelco/laravel-mix-wp-blocks');
-
+require('palette-webpack-plugin/src/mix');
+require('dotenv').config();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,9 +14,28 @@ require('@tinypixelco/laravel-mix-wp-blocks');
  |
  */
 
-mix
-  .setPublicPath('./public')
-  .browserSync('sage.test');
+ mix.setPublicPath('./public').browserSync(process.env.BROWSER_SYNC_PROXY);
+
+ mix.webpackConfig({
+   resolve: {
+     alias: {
+       '@': path.resolve(__dirname),
+       '~': path.resolve(__dirname),
+     },
+   },
+ });
+
+ mix.palette({
+   output: 'palette.json',
+   blacklist: ['transparent', 'inherit'],
+   priority: 'tailwind',
+   pretty: process.env.NODE_ENV === 'development',
+   tailwind: {
+     config: './tailwind.config.js',
+     shades: true,
+     path: 'colors',
+   },
+ });
 
 mix
   .sass('resources/styles/app.scss', 'styles')

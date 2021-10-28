@@ -90,7 +90,49 @@ add_action('after_setup_theme', function () {
      * Register the editor font sizes.
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-font-sizes
      */
-    add_theme_support('editor-font-sizes', []);
+    add_theme_support('editor-font-sizes', [
+      [
+          'name' => esc_attr__('Heading Huge', 'hex'),
+          'size' => '5.5rem',
+          'slug' => 'heading-huge',
+      ],
+      [
+          'name' => esc_attr__('Heading Big', 'hex'),
+          'size' => '3.5rem',
+          'slug' => 'heading-big',
+      ],
+      [
+          'name' => esc_attr__('Heading Normal', 'hex'),
+          'size' => '2.375rem',
+          'slug' => 'heading-normal',
+      ],
+      [
+          'name' => esc_attr__('Heading Small', 'hex'),
+          'size' => '1.75rem',
+          'slug' => 'heading-small',
+      ],
+      [
+          'name' => esc_attr__('Heading Extra Small', 'hex'),
+          'size' => '1.1875rem',
+          'slug' => 'heading-xsmall',
+      ],
+      [
+          'name' => esc_attr__('Body Normal', 'hex'),
+          'size' => '1.125rem',
+          'slug' => 'body-normal',
+      ],
+      [
+          'name' => esc_attr__('Body Small', 'hex'),
+          'size' => '0.875rem',
+          'slug' => 'body-small',
+      ],
+      [
+          'name' => esc_attr__('Button Normal', 'hex'),
+          'size' => '1.25rem',
+          'slug' => 'button-normal',
+      ],
+    ]);
+
 
     /**
      * Register relative length units in the editor.

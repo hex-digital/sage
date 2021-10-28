@@ -1,0 +1,56 @@
+@use '../tools/text';
+
+/* Headings */
+.has-heading-huge-font-size {
+  @include text.heading-huge(demi);
+}
+
+.has-heading-huge-font-size--light {
+  @include text.heading-huge(light);
+}
+
+.has-heading-big-font-size {
+  @include text.heading-big();
+}
+
+.has-heading-normal-font-size {
+  @include text.heading-normal();
+}
+
+.has-heading-small-font-size {
+  @include text.heading-small();
+}
+
+.has-heading-xsmall-font-size {
+  @include text.heading-xsmall(demi);
+}
+
+.has-heading-xsmall-font-size--light {
+  @include text.heading-xsmall(regular);
+}
+
+/* Body */
+// .has-body-big-font-size {
+//   @include text.body-big();
+// }
+
+// .has-body-medium-font-size {
+//   @include text.body-medium();
+// }
+
+.has-body-normal-font-size {
+  @include text.body-normal();
+}
+
+.has-body-small-font-size {
+  @include text.body-small();
+}
+
+/* Buttons */
+.has-button-normal-font-size {
+  @include text.button-normal();
+}
+
+.has-button-small-font-size {
+  @include text.button-small();
+}

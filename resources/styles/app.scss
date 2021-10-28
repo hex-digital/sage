@@ -1,6 +1,23 @@
-@import 'tailwindcss/base';
+/*
+ * Block Editor (Gutenberg) Block Styles
+ *
+ * This file is applied on the front end only.
+ * It should contain all styling for the frontend of the website.
+ */
 
-@import 'common/global';
+ @use 'settings' with ($is-block-editor: false);
 
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+ @use 'tailwindcss/base' as tw-b;
+
+ @use 'generics';
+
+ @use 'elements';
+
+ @use 'tailwindcss/components' as tw-c;
+
+ @use 'blocks';
+ @use 'components';
+
+ @use 'tailwindcss/utilities' as tw-u;
+
+ @use 'utilities';

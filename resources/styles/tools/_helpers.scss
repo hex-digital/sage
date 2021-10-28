@@ -1,0 +1,71 @@
+/**
+ * Output the CSS for theme settings that apply at different screen breakpoints
+ * E.G. for a map of the following form:
+ *  $padding: (
+ *    'DEFAULT': 20px,
+ *    'md': 40px,
+ *    'lg': 80px,
+ *  ),
+ *
+ * This mixin could be used like this:
+ *  .box {
+ *    @each $breakpoint-name, $padding-value in $padding {
+ *      @include screen($breakpoint-name) {
+ *        padding: $padding-value;
+ *      }
+ *    }
+ *  }
+ * to generate CSS:
+ *  .box {
+ *    padding: 20px;
+ *    @screen md { padding: 40px; }
+ *    @screen lg { padding: 80px; }
+ *  }
+ */
+@mixin screen($breakpoint-name) {
+  @if $breakpoint-name == 'DEFAULT' {
+    @content;
+  }
+  @else {
+    @screen #{$breakpoint-name} {
+      @content;
+    }
+  }
+}
+
+/**
+ * Output the CSS for theme settings that apply different modifiers
+ * E.G.
+ *  $max-width: (
+ *    'DEFAULT': 65rem,
+ *    'sm': 50rem,
+ *    'lg': 75rem,
+ *  ),
+ *
+ * This mixin could be used like this:
+ *  .wrapper {
+ *    @each $modifier-name, $value in $max-width {
+ *      @include modifier($modifier-name) {
+ *        max-width: $value;
+ *      }
+ *    }
+ *  }
+ * to generate CSS:
+ *  .wrapper {
+ *    max-width: 65rem;
+ *    &--sm { max-width: 50rem; }
+ *    &--lg { max-width: 75rem; }
+ *  }
+ */
+@mixin modifier($modifier-name, $prefix: '', $suffix: '', $mod: '--') {
+  @if ($modifier-name == 'DEFAULT') {
+    &#{$suffix} {
+      @content;
+    }
+  }
+  @else {
+    &#{$mod}#{$prefix}#{$modifier-name}#{$suffix} {
+      @content;
+    }
+  }
+}

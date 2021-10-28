@@ -1,0 +1,88 @@
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `font-size` and `line-height` for the entire project. The `font-size` is in ems, the `line-height`
+ *    is unitless.
+ * 2. Allow absolute or fixed positioning to position properly even when WP admin-bar is visible at top of screen.
+ * 3. Create a smooth scrolling, rather than snap scrolling for anchor links.
+ * 4. Using optimizeLegibility instead of optimizeSpeed makes your text look nicer, but can have serious performance issues such as 30 second loading delays. It can be added to sections of microcopy though.
+ * 5. Nicer looking fonts via font smooth. See: https://szafranek.net/blog/2009/02/22/font-smoothing-explained/
+ * 6. Webkit browsers overlay their UI bottom pane onto/over the website. This is a hacky fix for that.
+ */
+
+html {
+  background-color: theme('colors.white');
+  color: theme('colors.dark-green');
+  font-family: theme('fontFamily.body');
+  font-size: 1em; /* [1] */
+  line-height: 1.125; /* [1] */
+  position: relative; /* [2] */
+  scroll-behavior: smooth; /* [3] */
+  text-rendering: optimizeSpeed; /* [4] */
+  -webkit-font-smoothing: antialiased; /* [5] */
+  -moz-osx-font-smoothing: grayscale; /* [5] */
+  height: -webkit-fill-available; /* [6] */
+}
+
+body {
+  font-size: theme('fontSize.18');
+  min-height: 100vh; /* [6] */
+
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available; /* [6] */
+
+  @screen md {
+    font-size: theme('fontSize.18');
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: theme('fontFamily.heading');
+}
+
+p {
+  line-height: 26px;
+  margin-bottom: 1rem;
+
+  strong {
+    font-weight: theme('fontWeight.bold');
+  }
+}
+
+
+/**
+ * Change the way the wp-admin bar displays to prevent overlapping of content.
+ * Necessary because we set position: relative on html.
+ */
+#wpadminbar {
+  @media (max-width: 783px) {
+    margin-top: -46px;
+  }
+}
+
+/**
+ * Apply class to <body> tag to create a grid with the footer at the bottom. This causes the footer to always 'stick' to
+ * the bottom of the screen, even on pages with little content. See: https://css-tricks.com/couple-takes-sticky-footer/
+ */
+.u-sticky-footer {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

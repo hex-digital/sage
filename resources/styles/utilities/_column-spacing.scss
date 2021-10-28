@@ -1,0 +1,19 @@
+.u-indent-left,
+.u-indent-both {
+  @screen sm {
+    margin-left: theme('spacing.32');
+  }
+  @screen lg {
+    margin-left: theme('spacing.130');
+  }
+}
+
+.u-indent-right,
+.u-indent-both {
+  @screen sm {
+    margin-right: theme('spacing.32');
+  }
+  @screen lg {
+    margin-right: theme('spacing.130');
+  }
+}

@@ -1,0 +1,88 @@
+:root {
+  --admin-bar-height: 46px;
+  @media (min-width: 783px) {
+    --admin-bar-height: 32px;
+  }
+
+  --wrapper-pad: theme('wrapper.padding.DEFAULT');
+  @screen sm {
+    --wrapper-pad: theme('wrapper.padding.sm');
+  }
+  @screen lg {
+    --wrapper-pad: theme('wrapper.padding.lg');
+  }
+
+  // Padding for Section block
+  --section-p-none: 0;
+  // --section-p-small: 1.5rem;
+  --section-p: 1.75rem;
+  --section-p-bottom: 1.75rem;
+
+  // --section-p-large: 3rem;
+  @screen md {
+    // --section-p-small: 2rem;
+    --section-p: 2.25rem;
+    --section-p-bottom: 2.25rem;
+
+    // --section-p-large: 4.05rem;
+  }
+  @screen lg {
+    // --section-p-small: 2.8125rem;
+    --section-p: 4.5rem;
+    --section-p-bottom: 6rem;
+    // --section-p-large: 8.75rem;
+  }
+}
+
+.wp-block-hex-block-section {
+  overflow: hidden;
+  padding-bottom: var(--section-p-bottom);
+  padding-top: var(--section-p);
+
+  &--pt-none {
+    padding-top: var(--section-p-none);
+  }
+
+  &--pb-none {
+    padding-bottom: var(--section-p-none);
+  }
+
+  &--pt-small {
+    padding-top: var(--section-p-small);
+  }
+
+  &--pb-small {
+    padding-bottom: var(--section-p-small);
+  }
+
+  &--pt-large {
+    padding-top: var(--section-p-large);
+  }
+
+  &--pb-large {
+    padding-bottom: var(--section-p-large);
+  }
+}
+
+.wp-block-hex-block-column {
+  @screen md {
+    --column-indent-size: 4.375rem;
+  }
+  @screen lg {
+    --column-indent-size: 8.125rem;
+  }
+
+  &.is-style-right-indent,
+  &.is-style-both-indent {
+    @screen md {
+      padding-right: var(--column-indent-size);
+    }
+  }
+
+  &.is-style-left-indent,
+  &.is-style-both-indent {
+    @screen md {
+      padding-left: var(--column-indent-size);
+    }
+  }
+}

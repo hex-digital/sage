@@ -1,0 +1,91 @@
+/**
+ * If any new sizes are added here, remember to add them to styles/utilities/_text and styles/_typography as well
+ */
+
+@mixin heading-huge($weight) {
+  @if ($weight == light) {
+    font-weight: 300;
+  } @else {
+    font-weight: 500;
+  }
+  font-size: theme('fontSize.48');
+  line-height: 1.15;
+
+  @screen sm {
+    font-size: theme('fontSize.72');
+    line-height: 1.06;
+
+  }
+  @screen lg {
+    font-size: theme('fontSize.88');
+    line-height: 1.05;
+  }
+}
+
+@mixin heading-big {
+  font-weight: 500;
+  font-size: theme('fontSize.36');
+  line-height: 1.17;
+
+  @screen sm {
+    font-size: theme('fontSize.48');
+    line-height: 1.12;
+  }
+  @screen lg {
+    font-size: theme('fontSize.56');
+    line-height: 1.14;
+  }
+}
+
+@mixin heading-normal {
+  font-weight: 500;
+  font-size: theme('fontSize.29');
+  line-height: 1.17;
+
+  @screen lg {
+    font-size: theme('fontSize.38');
+    line-height: 1.16;
+
+  }
+}
+
+@mixin heading-small {
+  font-weight: 500;
+  font-size: theme('fontSize.24');
+  line-height: 1.25;
+
+  @screen lg {
+    font-size: theme('fontSize.28');
+    line-height: 1.21;
+  }
+}
+
+@mixin heading-xsmall($weight) {
+  @if ($weight == regular) {
+    font-weight: 400;
+  } @else {
+    font-weight: 500;
+  }
+  font-size: theme('fontSize.19');
+  line-height: 1.37;
+}
+
+@mixin body-normal {
+  font-size: theme('fontSize.18');
+  line-height: 1.44;
+}
+
+@mixin body-small {
+  font-size: theme('fontSize.14');
+  line-height: 1.71;
+}
+
+@mixin button-normal {
+  font-size: theme('fontSize.19');
+  line-height: 1.37;
+}
+
+@mixin button-small {
+  font-size: theme('fontSize.1');
+  line-height: 1.47;
+}

@@ -1,0 +1,57 @@
+/*
+ * Block Editor (Gutenberg) Block Styles
+ *
+ * This file is applied directly to the Block Editor. Some styles are transformed by WordPress to make this happen.
+ * For example, any 'body { ... }' styles are transformed to '.editor-styles-wrapper { ... }'
+ * See: https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
+ *
+ * This file is not included on the frontend of the website. Use app.scss for that.
+ *
+ * It should only include CSS that styles blocks to match how they will look on the frontend.
+ *
+ * Instead of this file, use editor.scss for styling how the actual editor itself should look.
+ */
+
+ @use 'settings' as * with ($is-block-editor: true);
+
+ @use 'tailwindcss/base' as tw-b;
+
+ @use 'generics';
+
+ @use 'elements';
+
+ @use 'tailwindcss/components' as tw-c;
+
+ @use 'blocks';
+ @use 'components';
+
+ @use 'tailwindcss/utilities' as tw-u;
+
+ @use 'utilities';
+
+ /**
+  * [1] Constrain blocks to the same max-width as our website wrapper (o-wrapper)
+  * [2] Remove that max-width constraint from [1] on blocks that will break out of the wrapper on the frontend (using .alignfull).
+  *     This is because the 'bleed-width' mixin isn't applied to .alignfull in the editor, as it doesn't work there due
+  *     to the sidebars and so 100vw isn't reliable. See blocks/global for the .alignfull bleed-width definition.
+  */
+ .wp-block {
+   max-width: theme('wrapper.maxWidth.DEFAULT'); /* [1] */
+
+   &[data-align="full"] {
+     max-width: unset; /* [1] */
+   }
+ }
+
+ /**
+  * [1] The wrapper works a bit funky in the editor so we want to remove the padding from it so it lines up with other blocks.
+  *     The editor already applies its own padding as well which is 8px, so we use that for the wrapper here too.
+  */
+ .o-wrapper {
+   padding-left: 8px; /* [1] */
+   padding-right: 8px; /* [1] */
+ }
+
+ .wp-block-buttons > .wp-block {
+   margin-top: 0;
+ }
