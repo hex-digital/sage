@@ -30,9 +30,9 @@
     "@roots/bud-tailwindcss": "^5.7.7",
     "@roots/sage": "5.7.7",
     "browser-sync": "^2.27.9",
-    "browser-sync-webpack-plugin": "^2.3.0"
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "dotenv": "^16.0.0",
+    "stylelint-scss": "^4.2.0"
   },
-  "dependencies": {
-    "dotenv": "^16.0.0"
-  }
+  "dependencies": {}
 }
