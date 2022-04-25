@@ -27,14 +27,12 @@
     "@roots/bud-postcss": "^5.7.7",
     "@roots/bud-prettier": "^5.7.7",
     "@roots/bud-sass": "^5.7.7",
-    "@roots/bud-stylelint": "^5.7.7",
     "@roots/bud-tailwindcss": "^5.7.7",
     "@roots/sage": "5.7.7",
     "browser-sync": "^2.27.9",
     "browser-sync-webpack-plugin": "^2.3.0",
     "color": "^4.2.3",
-    "dotenv": "^16.0.0",
-    "stylelint-scss": "^4.2.0"
+    "dotenv": "^16.0.0"
   },
   "dependencies": {}
 }
