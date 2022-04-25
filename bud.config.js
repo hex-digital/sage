@@ -3,6 +3,8 @@
  *
  * @param {bud} app
  */
+ require('dotenv').config();
+
 module.exports = async (app) => {
   app
     /**
@@ -32,10 +34,10 @@ module.exports = async (app) => {
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://example.test')
+    .proxy(process.env.BROWSER_SYNC_PROXY)
 
     /**
      * Development URL to be used in the browser.
      */
-    .serve('http://0.0.0.0:3000');
+    .serve(process.env.BROWSER_SYNC_PROXY);
 };

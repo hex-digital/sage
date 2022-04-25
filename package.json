@@ -15,11 +15,24 @@
     "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
     "translate:compile": "yarn translate:mo && yarn translate:js",
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
-    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint resources/scripts",
+    "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
+    "test": "npm run lint"
   },
   "devDependencies": {
     "@roots/bud": "5.7.7",
-    "@roots/bud-tailwindcss": "5.7.7",
-    "@roots/sage": "5.7.7"
+    "@roots/bud-postcss": "^5.7.7",
+    "@roots/bud-prettier": "^5.7.7",
+    "@roots/bud-sass": "^5.7.7",
+    "@roots/bud-stylelint": "^5.7.7",
+    "@roots/bud-tailwindcss": "^5.7.7",
+    "@roots/sage": "5.7.7",
+    "browser-sync": "^2.27.9",
+    "browser-sync-webpack-plugin": "^2.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
   }
 }
