@@ -1,4 +1,7 @@
 import {domReady} from '@roots/sage/client';
+import {$} from 'jquery';
+import { HEX } from './hex'
+
 
 /**
  * app.main
@@ -9,7 +12,8 @@ const main = async (err) => {
     console.error(err);
   }
 
-  // application code
+  $ = window.jQuery;
+  HEX.init($);
 };
 
 /**

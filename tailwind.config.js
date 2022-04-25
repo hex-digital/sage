@@ -15,7 +15,7 @@ module.exports = {
   content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}'],
   prefix: 'u-',
   mode: 'jit',
-  // plugins: [require('@captaincss/captaincss')],
+  plugins: [require('@captaincss/captaincss')],
   captain: {
     prefix: {
       objects: 'o-',

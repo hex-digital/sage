@@ -34,5 +34,8 @@
     "color": "^4.2.3",
     "dotenv": "^16.0.0"
   },
+  "peerDependencies": {
+    "jquery": "^3.5.1"
+  },
   "dependencies": {}
 }
