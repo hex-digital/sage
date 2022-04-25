@@ -6,7 +6,7 @@
     'menu' => __( 'The Main Menu', 'sesha' ),
     'menu_class' => 'site-menu',
     'echo' => false,
-    // 'walker' => new site_navigation_menu()
+    'walker' => new site_navigation_menu()
     ]) !!}
 </nav>
 

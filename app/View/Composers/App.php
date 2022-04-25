@@ -23,6 +23,7 @@ class App extends Composer
     public function with()
     {
         return [
+            'logo' => $this->logo(),
             'siteName' => $this->siteName(),
         ];
     }
@@ -36,4 +37,18 @@ class App extends Composer
     {
         return get_bloginfo('name', 'display');
     }
+
+
+    /**
+     * Returns the header logo strings.
+     *
+     * @return array
+     */
+    public function logo() {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+        return $logo[0];
+
+      }
 }

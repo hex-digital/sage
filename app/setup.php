@@ -32,6 +32,17 @@ add_action('enqueue_block_editor_assets', function () {
  * @return void
  */
 add_action('after_setup_theme', function () {
+
+    // Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height'  => true,
+		'header-text' => array( 'site-title', 'site-description' )
+	) );
+
+
     /**
      * Enable features from the Soil plugin if activated.
      * @link https://roots.io/plugins/soil/
