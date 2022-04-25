@@ -1,0 +1,19 @@
+.u-indent-left,
+.u-indent-both {
+  @screen sm {
+    margin-left: 32px;
+  }
+  @screen lg {
+    margin-left: 130px;
+  }
+}
+
+.u-indent-right,
+.u-indent-both {
+  @screen sm {
+    margin-right: 32px;
+  }
+  @screen lg {
+    margin-right: 130px;
+  }
+}

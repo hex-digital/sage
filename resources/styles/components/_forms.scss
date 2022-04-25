@@ -1,0 +1,35 @@
+//
+// General form controls (plus a few specific high-level interventions)
+//
+
+input:not([type=checkbox], [type=radio], [type=button], [type=submit], [type=range], [type=color]),
+textarea {
+  @apply u-font-form
+    u-block
+    u-w-full
+    u-border
+    u-border-border u-text-forms u-bg-white
+    u-bg-clip-padding
+    u-appearance-none
+    u-rounded-md
+    u-transition u-ease-easeOutQuart u-duration-snail
+    u-px-sm u-py-xs;
+
+  &:hover {
+    @apply u-text-forms u-bg-light;
+  }
+
+  &:focus {
+    @apply u-text-forms u-bg-white u-border-primary-default u-outline-none ;
+    box-shadow: 0 0 10px theme('colors.secondary.default');
+  }
+
+  &::placeholder {
+    @apply u-text-forms u-opacity-100;
+  }
+
+  &:disabled,
+  &[readonly] {
+    @apply u-bg-disabled u-border-disabled u-opacity-100;
+  }
+}

@@ -1,0 +1,113 @@
+img {
+  @apply u-max-w-full;
+}
+
+label {
+  @apply u-cursor-pointer;
+}
+
+legend {
+  @apply u-text-md;
+}
+
+p {
+  margin-bottom: theme('spacing.md');
+}
+
+#site-content {
+  ul, ol {
+    margin-bottom: theme('spacing.lg');
+  }
+}
+
+a {
+  @apply u-text-link-base;
+  &:hover {
+    @apply u-text-link-hover;
+  }
+  &:focus {
+    @apply u-text-link-focus;
+  }
+}
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.display-1,
+.display-2,
+.display-3 {
+  @apply u-font-heading;
+  margin-bottom: .5em;
+}
+
+strong, .strong {
+  @apply u-font-bold;
+}
+
+.h1, h1 {
+  @apply u-text-xl;
+}
+.h2, h2 {
+  @apply u-text-lg;
+}
+.h3, h3 {
+  @apply u-text-md;
+}
+.h4, h4 {
+  @apply u-text-base;
+}
+.h5, h5 {
+  @apply u-text-base;
+}
+.h6, h6 {
+  @apply u-text-sm;
+}
+
+
+.display-1 {
+  @apply u-text-4xl;
+}
+.display-2 {
+  @apply u-text-3xl;
+}
+.display-3 {
+  @apply u-text-2xl;
+}
+
+
+table {
+  width: 100%;
+  vertical-align: top;
+  border-color: theme('colors.border');
+
+  > :not(caption) > * > * {
+    padding: theme('spacing.sm') theme('spacing.md');
+    background-color: white;
+    border-bottom-width: 1px;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+
+  th[scope='col'] {
+    text-align: left;
+  }
+  th[scope='row'] {
+    text-align: right;
+  }
+
+  // Highlight border color between thead, tbody and tfoot.
+  > :not(:first-child) {
+    border-top: solid 1px theme('colors.border');
+  }
+}
+

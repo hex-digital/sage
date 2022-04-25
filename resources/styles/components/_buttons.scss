@@ -1,0 +1,170 @@
+
+// Default classes
+// --------------------------------------------------------
+.btn {
+  @apply u-py-xs
+  u-px-lg
+  u-font-semibold
+  u-uppercase
+  u-rounded-lg
+  u-shadow-md
+    u-border
+    u-transition
+    u-ease-easeOutQuart
+    u-duration-snail;
+
+  font-family: theme('fontFamily.button');
+
+  &[disabled],
+  &.disabled,
+  &[disabled]:hover,
+  &.disabled:hover {
+    @apply u-bg-disabled u-border-disabled u-text-dark u-cursor-default;
+  }
+}
+
+.btn-sm {
+  @apply u-py-xs u-px-sm u-rounded-md u-text-sm;
+}
+
+.btn-lg {
+  @apply u-py-sm u-px-xl u-rounded-xl u-text-md;
+}
+
+.btn-pill {
+  @apply u-rounded-full;
+}
+
+
+// Primary
+// --------------------------------------------------------
+.btn-primary {
+  @apply u-text-white u-bg-primary-default u-border-primary-default;
+  background-color: theme('colors.primary.default');
+
+  &:hover {
+    @apply u-text-white u-bg-primary-darker u-border-primary-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-primary-lighter u-border-primary-lighter;
+  }
+}
+
+.btn-outline-primary {
+  @apply u-text-primary-default u-bg-white u-border-primary-default;
+
+  &:hover {
+    @apply u-text-white u-bg-primary-default u-border-primary-default;
+  }
+  &:focus {
+    @apply u-text-white u-bg-primary-lighter u-border-primary-lighter ;
+  }
+}
+
+
+
+// Secondary
+// --------------------------------------------------------
+.btn-secondary {
+  @apply u-text-white u-bg-secondary-default;
+
+  &:hover {
+    @apply u-text-white u-bg-secondary-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-secondary-lighter;
+  }
+}
+
+.btn-outline-secondary {
+  @apply u-text-secondary-default u-bg-white u-border-secondary-default;
+
+  &:hover {
+    @apply u-text-white u-bg-secondary-default u-border-secondary-default;
+  }
+  &:focus {
+    @apply u-text-white u-bg-secondary-lighter u-border-secondary-lighter ;
+  }
+}
+
+
+// Utility buttons
+// --------------------------------------------------------
+.btn-success {
+  @apply u-text-white u-bg-success-default;
+  &:hover {
+    @apply u-text-white u-bg-success-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-success-lighter;
+  }
+}
+.btn-info {
+  @apply u-text-white u-bg-info-default;
+  &:hover {
+    @apply u-text-white u-bg-info-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-info-lighter;
+  }
+}
+.btn-warning {
+  @apply u-text-white u-bg-warning-default;
+  &:hover {
+    @apply u-text-white u-bg-warning-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-warning-lighter;
+  }
+}
+.btn-danger {
+  @apply u-text-white u-bg-danger-default;
+  &:hover {
+    @apply u-text-white u-bg-danger-darker;
+  }
+  &:focus {
+    @apply u-text-white u-bg-danger-lighter;
+  }
+}
+
+
+
+
+// Utility buttons - outlined
+// --------------------------------------------------------
+.btn-outline-success {
+  @apply  u-border-success-default u-text-success-default;
+  &:hover {
+    @apply  u-border-success-default u-bg-success-default u-text-white;
+  }
+  &:focus {
+    @apply  u-border-success-lighter u-bg-success-lighter u-text-white;
+  }
+}
+.btn-outline-info {
+  @apply  u-border-info-default u-text-info-default;
+  &:hover {
+    @apply  u-border-info-default u-bg-info-default u-text-white;
+  }
+  &:focus {
+    @apply  u-border-info-lighter u-bg-info-lighter u-text-white;
+  }
+}
+.btn-outline-warning {
+  @apply  u-border-warning-default u-text-warning-default;
+  &:hover {
+    @apply  u-border-warning-default u-bg-warning-default u-text-white;
+  }
+  &:focus {
+    @apply  u-border-warning-lighter u-bg-warning-lighter u-text-white;
+  }
+}
+.btn-outline-danger {
+  @apply  u-border-danger-default u-text-danger-default;
+  &:hover {
+    @apply  u-border-danger-default u-bg-danger-default u-text-white;
+  }
+  &:focus {
+    @apply  u-border-danger-lighter u-bg-danger-lighter u-text-white;
+  }
+}

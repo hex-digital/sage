@@ -1,0 +1,31 @@
+
+// Site overlays
+// -----------------------------------
+@mixin make-site-overlay($zindex: $zmax) {
+	position: fixed;
+	z-index: $zindex;
+	opacity: 0;
+	cursor: pointer;
+	transition: opacity 200ms ease-in-out;
+	background: rgba(0, 0, 0, 0.4);
+}
+@mixin show-site-overlay() {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 1;
+}
+
+// Make a Dropdown or expanding panel
+// -----------------------------------
+@mixin make-dropdown() {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+@mixin show-dropdown($height: 1000px) {
+	max-height: $height;
+	opacity: 1;
+	overflow: visible;
+}

@@ -1,3 +1,17 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@use 'settings' with ($is-block-editor: false);
+
+@use 'tailwindcss/base' as tw-b;
+
+@use 'generics';
+
+@use 'elements';
+
+@use 'tailwindcss/components' as tw-c;
+
+@use 'blocks';
+@use 'components';
+
+@use 'tailwindcss/utilities' as tw-u;
+
+@use 'utilities';
+

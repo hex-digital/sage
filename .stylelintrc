@@ -1,8 +1,0 @@
-{
-  "plugins": ["stylelint-scss"],
-  "customSyntax": "postcss-scss",
-  "extends": [
-    "@roots/sage/stylelint-config",
-    "@roots/bud-tailwindcss/stylelint-config"
-  ]
-}

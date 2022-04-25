@@ -1,0 +1,17 @@
+.u-no-scroll {
+  height: 100%;
+  overflow: hidden
+}
+
+.u-img--placeholder {
+  --frame-antecedent: 16;
+  --frame-consequent: 9;
+  background: theme('colors.black');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    margin: auto auto;
+  }
+}

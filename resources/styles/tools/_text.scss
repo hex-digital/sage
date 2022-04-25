@@ -1,0 +1,43 @@
+@mixin heading-huge() {
+  font-size: theme('fontSize.xl');
+}
+
+@mixin heading-big {
+  font-weight: 500;
+  font-size: theme('fontSize.lg');
+}
+
+@mixin heading-normal {
+  font-weight: 500;
+  font-size: theme('fontSize.base');
+}
+
+@mixin heading-small {
+  font-weight: 500;
+  font-size: theme('fontSize.sm');
+}
+
+@mixin heading-xsmall($weight) {
+  @if ($weight == regular) {
+    font-weight: 400;
+  } @else {
+    font-weight: 500;
+  }
+  font-size: theme('fontSize.xs');
+}
+
+@mixin body-normal {
+  font-size: theme('fontSize.base');
+}
+
+@mixin body-small {
+  font-size: theme('fontSize.sm');
+}
+
+@mixin button-normal {
+  font-size: theme('fontSize.base');
+}
+
+@mixin button-small {
+  font-size: theme('fontSize.sm');
+}

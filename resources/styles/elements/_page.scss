@@ -1,0 +1,57 @@
+html {
+  background-color: theme('colors.white');
+  color: theme('colors.body');
+  font-family: theme('fontFamily.body');
+  font-size: 1em;
+  line-height: 1.125;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: -webkit-fill-available;
+}
+
+body {
+  font-size: theme('fontSize.base');
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  line-height: 1.5;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+// Page layout
+// ----------------------------------------------------------------
+$spacing: theme('spacing.sm');
+
+.content__wrapper {
+
+}
+.container {
+  max-width: theme('screens.xl.min');
+  margin: 0 auto;
+  padding-left: $spacing;
+  padding-right: $spacing;
+}
+
+#site-content {
+  min-height: calc(100vh - theme('height.masthead-height') - theme('height.footer-height'));
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+#site-sidebar {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}

@@ -1,0 +1,39 @@
+// Euclid Normal
+@font-face {
+  font-family: 'Euclid';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('../fonts/euclid/EuclidCEPI-Regular-WebM.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/euclid/EuclidCEPI-Regular-WebM.woff2') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ }
+
+ // Euclid Bold
+ @font-face {
+  font-family: 'Euclid';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+  url('../fonts/euclid/EuclidCEPI-Bold-WebM.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/euclid/EuclidCEPI-Bold-WebM.woff2') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ }
+
+ // Euclid Medium
+ @font-face {
+  font-family: 'Euclid';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+  url('../fonts/euclid/EuclidCEPI-Medium-WebM.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/euclid/EuclidCEPI-Medium-WebM.woff2') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ }
+
+ // Merriweather
+ @font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('../fonts/merriweather-regular.woff') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/merriweather-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ }
