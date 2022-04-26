@@ -1,4 +1,4 @@
-@include('partials.header')
+@include('partials.masthead')
 
 <div class="content__wrapper / has-menu-animation container">
 

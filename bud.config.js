@@ -17,8 +17,6 @@ module.exports = async (app) => {
       editor: ['@scripts/editor', '@styles/editor'],
     })
 
-    provide({ jquery: ["jQuery", "$"], })
-
     /**
      * These files should be processed as part of the build
      * even if they are not explicitly imported in application assets.

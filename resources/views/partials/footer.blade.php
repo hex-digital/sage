@@ -12,3 +12,5 @@
 
 </footer>
 
+<div class="overlay__mobile-menu"></div>
+<div class="overlay__search"></div>

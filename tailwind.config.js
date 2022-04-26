@@ -1,5 +1,5 @@
 const { colors } = require('./tools/tailwind/colors');
-const { heights } = require('./tools/tailwind/heights');
+const { widths, heights } = require('./tools/tailwind/dimensions');
 const { fontFamily, fontSize, fontWeight, lineHeight, letterSpacing } = require('./tools/tailwind/typography');
 const { screens } = require('./tools/tailwind/screens');
 const { skipLink } = require('./tools/tailwind/skipLink');
@@ -34,6 +34,7 @@ module.exports = {
     extend: {
       activeBreakpoint,
       height: () => (heights),
+      width: () => (widths),
       minHeight: () => (heights),
       fontSize,
       colors,

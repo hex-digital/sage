@@ -7,5 +7,3 @@
     {{ get_search_form() }}
 	</div>
 </div>
-
-<div class="overlay__search"></div>

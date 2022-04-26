@@ -10,5 +10,5 @@
     ]) !!}
 </nav>
 
-@include('partials.header.hamburger-icon')
+@include('partials.masthead.hamburger-icon')
 @endif

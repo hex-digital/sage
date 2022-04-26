@@ -5,14 +5,15 @@ exports.zIndex = {
   max : max,
   modal: max,
   dropdown: max - 10,
-  header: max - 10,
-  overlay: max - 20,
+  masthead: max - 10,
+  navbar:	max - 10,
+  overlay: max - 30,
 
   foreground: max - 200,
 
   base: max - 200,
 
-  navbar:	min + 50,
+
   background: min,
   min : min,
 };

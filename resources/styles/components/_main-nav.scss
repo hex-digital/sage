@@ -1,15 +1,16 @@
+@use'../tools/mixins' as m;
+
 // Main Navigation
 // ----------------------------------------------------------------
 .site-menu {
   display: flex;
 }
-  .menu-item {
+  .menu-item {}
 
-  }
     .menu-main-link {
       text-transform: uppercase;
       display: block;
-     padding: theme('spacing.sm') theme('spacing.sm');
+      padding: theme('spacing.sm') theme('spacing.sm');
       font-family: theme('fontFamily.button');
     }
 
@@ -17,17 +18,18 @@
 // Menu Animations
 // ----------------------------------------------------------------
 .has-menu-animation {
-  transition: all 200ms cubic-bezier(0.5, 0, 0.75, 0);
+  $offset : calc( theme('width.mobile-navigation-offset') * -1 );
+  transition: all theme('transitionDuration.goat') linear;
 
   .has-navigation-active & {
-    transform: translate3d(-20vw, 0, 0);
+    transform: translate3d($offset, 0, 0);
   }
 }
 
 .overlay__mobile-menu {
-
+  @include m.make-site-overlay( theme('zIndex.overlay') );
   .has-navigation-active & {
-
+    @include m.show-site-overlay();
   }
 }
 
@@ -40,7 +42,7 @@
     z-index: theme('zIndex.navbar');
 
     height: 100vh;
-    width: 80vw;
+    width: calc( 100vw - theme('width.mobile-navigation-offset') );
 
     top: theme('height.masthead-height');
     right: 0;
@@ -55,7 +57,7 @@
 
 
     .admin-bar & {
-			top: theme('height.wordpress-admin-bar-mobile');
+			top: calc( theme('height.masthead-height') +  theme('height.wordpress-admin-bar-mobile') );
 		}
 
 		.has-navigation-active & {
