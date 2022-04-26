@@ -14,6 +14,9 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
+    wp_register_script( 'hex-responsive-tool', get_stylesheet_directory_uri() . '/resources/scripts/responsive.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'hex-responsive-tool' );
+
     bundle('app')->enqueue();
 }, 100);
 

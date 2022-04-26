@@ -15,6 +15,12 @@ export const HEX = {
 
 		HEX.updateCache($);
 
+    // Store Responsive Screen Sizes
+		// ------------------------------------------------------------------
+		const RESPONSIVE = $(window).data('responsive');
+
+    console.log(RESPONSIVE);
+
 
 		// Window scroll - navbar animation
 		// ------------------------------------------------------------------
@@ -68,7 +74,16 @@ export const HEX = {
 			return false;
 		});
 
-
+		// Search field focus
+		// ------------------------------------------------------------------
+		// If a user clicks on the search toggle button for mobile
+		HEX.cache.header.on('focus', '.search__input', () => {
+			if (RESPONSIVE.isMD || RESPONSIVE.isLG) {
+				if(HEX.cache.body.hasClass('has-standard-search')) {
+					HEX.cache.body.addClass('has-search-active');
+				}
+			}
+		});
 
 
 
@@ -79,11 +94,17 @@ export const HEX = {
 			const $el = $(event.currentTarget),
 				$parent = $el.parent('li');
 
+        console.log($el);
+
 			// Force next navigation level to be shown
 			$parent.addClass('is-expanded').siblings().removeClass('is-expanded');
 
 			cascadeLevel++;
 			HEX.cache.navigation.addClass('cascade-level-' + cascadeLevel);
+
+      if (RESPONSIVE.isSM || RESPONSIVE.isXS) {
+				return false;
+			}
 
 		});
 

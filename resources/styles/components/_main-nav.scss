@@ -8,9 +8,9 @@
   .menu-item {}
 
     .menu-main-link {
+      display: flex;
+      justify-content: space-between;
       text-transform: uppercase;
-      display: block;
-      padding: theme('spacing.sm') theme('spacing.sm');
       font-family: theme('fontFamily.button');
     }
 

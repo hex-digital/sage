@@ -33,9 +33,8 @@
     flex-direction: column;
   }
     .menu-main-link {
+      padding: theme('spacing.sm') theme('spacing.xs');
       border-bottom: 1px solid theme('colors.border');
-      display: flex;
-      justify-content: space-between;
     }
 
 // Indicator Arrows
@@ -49,14 +48,14 @@
 
 .menu-item-has-children > .menu-main-link {
   &:after {
-    content: '>';
+    content: '►';
   }
 }
 
 .js-menu-back-button {
   &:after {
     order: -1;
-    content: '<';
+    content: '◄';
   }
 }
 
@@ -110,7 +109,6 @@
 		background: white;
 		transition: all theme('transitionDuration.goat') theme('transitionTimingFunction.ease');
 		border-bottom: solid 1px theme('colors.border');
-
 
 		@include m.make-dropdown();
 

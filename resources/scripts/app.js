@@ -13,6 +13,7 @@ const main = async (err) => {
   }
 
   $ = window.jQuery;
+  $(window).responsive();
   HEX.init($);
 };
 
