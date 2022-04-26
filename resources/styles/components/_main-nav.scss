@@ -33,41 +33,22 @@
   }
 }
 
-
-// Flyout menu for tablet and mobile
-// ----------------------------------------------------------------
-@screen md-down {
-  #site-navigation {
-    position: fixed;
-    z-index: theme('zIndex.navbar');
-
-    height: 100vh;
-    width: calc( 100vw - theme('width.mobile-navigation-offset') );
-
-    top: theme('height.masthead-height');
-    right: 0;
-    bottom: 0;
-    background-color: theme('colors.white');
-    border-left: 1px solid theme('colors.border');
-
-    transition: all 200ms cubic-bezier(0.5, 0, 0.75, 0);
-		transform: translate3d(100%, 0, 0);
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
-
-
-    .admin-bar & {
-			top: calc( theme('height.masthead-height') +  theme('height.wordpress-admin-bar-mobile') );
-		}
-
-		.has-navigation-active & {
-			transform: translate3d(0, 0, 0);
-		}
-  }
-    .site-menu {
-      flex-direction: column;
-    }
-      .menu-main-link {
-        border-bottom: 1px solid theme('colors.border');
-      }
+.overlay__search {
+  @include m.make-site-overlay( theme('zIndex.overlay') );
 }
+
+
+
+// Search Form
+// ----------------------------------------------------------------
+.search__dropdown {
+	display: flex;
+	align-items: center;
+}
+
+.has-search-active  {
+	.overlay__search {
+		@include m.show-site-overlay();
+	}
+}
+

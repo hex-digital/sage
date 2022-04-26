@@ -1,0 +1,103 @@
+@use'../tools/mixins' as m;
+
+// Drop down menus for Desktop
+// ----------------------------------------------------------------
+// Hide mobile stuff
+.js-menu-back-button,
+.js-toggle-offcanvas-menu {
+  display: none !important;
+}
+
+.dropdown__wrapper,
+.search__wrapper  {
+  position: absolute;
+  @include m.make-dropdown();
+
+  transition: opacity theme('transitionDuration.goat') theme('transitionTimingFunction.ease');
+  top: 0;
+}
+
+  .dropdown__menu {
+    background-color: white;
+    border: solid 1px theme('colors.border');
+    min-width: 300px;
+  }
+
+// Each level dropdown
+.level-2-wrapper {
+  left: 0;
+  top: 100%;
+}
+  .level-2-wrapper .dropdown__wrapper {
+    top: 0;
+    left: 100%;
+  }
+
+.level-1-item:last-of-type {
+  .level-2-wrapper {
+    left: auto;
+    right: 0;
+    .dropdown__wrapper {
+      left: auto;
+      right: 100%;
+    }
+  }
+}
+
+// Toggle Drop Downs
+// ----------------------------------------------------------------
+.menu-item-has-children,
+.has-dropdown {
+  position: relative;
+}
+  .menu-item-has-children:hover {
+    > .dropdown__wrapper {
+      @include m.show-dropdown();
+    }
+  }
+
+  // Search Drop Down
+  .has-search-active .search__wrapper {
+    @include m.show-dropdown();
+  }
+
+
+// Search
+// ----------------------------------------------------------------
+.search-form__field {
+  height: auto;
+  border: none;
+  flex: 1 1 auto;
+}
+.search-form__button {
+  padding: 0 10px;
+  margin-left: 10px;
+}
+
+// Dropdown style search field
+.search__wrapper {
+  top: calc(100% + theme('spacing.sm') );
+  right: 0;
+  .search__form {
+    width: 400px;
+    padding: 20px;
+    background: white;
+    border: solid 1px theme('colors.border');
+  }
+}
+
+// Standard search box
+.has-standard-search {
+  .search__dropdown {
+    flex: 2 2 auto;
+    z-index: theme('zIndex.dropdown');
+
+    .search__toggle {
+      display: none;
+    }
+  }
+  .search__wrapper {
+    width: 100%;
+    min-width: 200px;
+  }
+}

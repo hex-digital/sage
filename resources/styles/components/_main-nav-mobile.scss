@@ -1,0 +1,124 @@
+@use'../tools/mixins' as m;
+
+// Flyout menu for tablet and mobile
+// ----------------------------------------------------------------
+#site-navigation {
+  position: fixed;
+  z-index: theme('zIndex.navbar');
+
+  height: 100vh;
+  width: calc( 100vw - theme('width.mobile-navigation-offset') );
+
+  top: theme('height.masthead-height');
+  right: 0;
+  bottom: 0;
+  background-color: theme('colors.white');
+  border-left: 1px solid theme('colors.border');
+
+  transition: all theme('transitionDuration.goat') theme('transitionTimingFunction.ease');
+  transform: translate3d(100%, 0, 0);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+
+  .admin-bar & {
+    top: calc( theme('height.masthead-height') +  theme('height.wordpress-admin-bar-mobile') );
+  }
+
+  .has-navigation-active & {
+    transform: translate3d(0, 0, 0);
+  }
+}
+  .site-menu {
+    flex-direction: column;
+  }
+    .menu-main-link {
+      border-bottom: 1px solid theme('colors.border');
+      display: flex;
+      justify-content: space-between;
+    }
+
+// Indicator Arrows
+// ----------------------------------------------------------------
+.menu-item-has-children > .menu-main-link,
+.js-menu-back-button {
+  &:after {
+    display: block;
+  }
+}
+
+.menu-item-has-children > .menu-main-link {
+  &:after {
+    content: '>';
+  }
+}
+
+.js-menu-back-button {
+  &:after {
+    order: -1;
+    content: '<';
+  }
+}
+
+// Flyout menus
+// ----------------------------------------------------------------
+.level-2-wrapper,
+.level-3-wrapper,
+.level-4-wrapper {
+  transform: translate3d(100%, 0, 0);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: none;
+
+  .is-expanded > & {
+    display: block;
+  }
+}
+  .level-1-list,
+  .level-2-list,
+  .level-3-list  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all theme('transitionDuration.goat') theme('transitionTimingFunction.ease');
+  }
+
+  .cascade-level-2 .level-1-list {
+    transform: translate3d(-100%, 0, 0);
+  }
+  .cascade-level-3 .level-1-list {
+    transform: translate3d(-200%, 0, 0);
+  }
+  .cascade-level-4 .level-1-list {
+    transform: translate3d(-300%, 0, 0);
+  }
+  .cascade-level-5 .level-1-list {
+    transform: translate3d(-300%, 0, 0);
+  }
+
+
+
+	// Search
+	// ----------------------------------------------------------------
+	.search__wrapper {
+		position: absolute;
+		z-index: theme('zIndex.dropdown');
+		top: 100%;
+		right: 0;
+		left: 0;
+		background: white;
+		transition: all theme('transitionDuration.goat') theme('transitionTimingFunction.ease');
+		border-bottom: solid 1px theme('colors.border');
+
+
+		@include m.make-dropdown();
+
+		.has-search-active &  {
+			@include m.show-dropdown();
+		}
+		.search__form {
+			padding: theme('spacing.sm');
+		}
+	}
+

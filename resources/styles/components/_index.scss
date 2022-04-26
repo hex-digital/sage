@@ -1,5 +1,12 @@
 @import 'masthead';
+
 @import 'main-nav';
+@screen md {
+  @import 'main-nav-desktop';
+}
+@screen md-down {
+  @import 'main-nav-mobile';
+}
 @import 'buttons';
 @import 'forms';
 @import 'pagination';

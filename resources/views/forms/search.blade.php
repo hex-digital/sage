@@ -1,5 +1,5 @@
-<form role="search" method="get" class="search-form u-flex" action="{{ home_url('/') }}">
-  <label>
+<form role="search" method="get" class="search__form u-flex u-gap-sm" action="{{ home_url('/') }}">
+  <label class="u-flex-grow">
     <span class="u-sr-only">
       {{ _x('Search for:', 'label', 'sage') }}
     </span>

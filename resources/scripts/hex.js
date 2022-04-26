@@ -69,16 +69,6 @@ export const HEX = {
 		});
 
 
-		// Search field focus
-		// ------------------------------------------------------------------
-		// If a user clicks on the search toggle button for mobile
-		HEX.cache.header.on('focus', '.search__input', () => {
-			if (RESPONSIVE.isMD || RESPONSIVE.isLG) {
-				if(HEX.cache.body.hasClass('has-standard-search')) {
-					HEX.cache.body.addClass('has-search-active');
-				}
-			}
-		});
 
 
 
@@ -95,9 +85,6 @@ export const HEX = {
 			cascadeLevel++;
 			HEX.cache.navigation.addClass('cascade-level-' + cascadeLevel);
 
-			if (RESPONSIVE.isSM || RESPONSIVE.isXS) {
-				return false;
-			}
 		});
 
 		// Back Button - Mobile Flyout menu
