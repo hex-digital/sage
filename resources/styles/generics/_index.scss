@@ -1,4 +1,6 @@
-@forward './custom-properties';
-@forward './focus';
-@forward './fonts';
-@forward './typography';
+@import './custom-properties';
+@import './focus';
+@import './fonts';
+@import './typography';
+@import './buttons';
+@import './forms';
