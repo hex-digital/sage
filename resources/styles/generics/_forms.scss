@@ -1,35 +1,134 @@
-//
-// General form controls (plus a few specific high-level interventions)
-//
+$form-check-input-width : 1.2em;
+$form-check-input-bg : white;
+
+$form-check-input-checked-bg-color : theme('colors.primary.default');;
+$form-check-input-checked-border-color: theme('colors.primary.default');
+
+$form-check-input-border: theme('colors.border');
+$form-check-input-focus-border: theme('colors.dark');
+$form-check-input-focus-box-shadow: black;
+$form-check-input-disabled-opacity: .5;
+$form-check-label-disabled-opacity: .5;
+
+$form-check-input-indeterminate-bg-color: theme('colors.dark');
+$form-check-input-indeterminate-border-color: theme('colors.dark');
+
+$form-check-input-border-radius:  .25em ;
+$form-check-radio-border-radius:  50% ;
+$form-check-input-checked-color: white;
+$form-select-indicator-color: black;
+
+$form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/></svg>");
+$form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
+$form-select-indicator : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+
 
 input:not([type=checkbox], [type=radio], [type=button], [type=submit], [type=range], [type=color]),
-textarea {
+textarea, select  {
   @apply u-font-form
     u-block
     u-w-full
     u-border
-    u-border-border u-text-forms u-bg-white
+   u-text-form-text-default
+   u-bg-form-bg-default
+   u-border-form-border-default
     u-bg-clip-padding
     u-appearance-none
-    u-rounded-md
     u-transition u-ease-easeOutQuart u-duration-snail
     u-px-sm u-py-xs;
 
   &:hover {
-    @apply u-text-forms u-bg-light;
+    @apply u-text-form-text-hover u-bg-form-bg-hover u-border-form-border-hover;
   }
 
   &:focus {
-    @apply u-text-forms u-bg-white u-border-primary-default u-outline-none ;
-    box-shadow: 0 0 10px theme('colors.secondary.default');
+    @apply u-text-form-text-focus u-bg-form-bg-focus u-border-form-border-focus u-outline-none ;
+    box-shadow: 0 0 10px theme('colors.form.border.shadow');
   }
 
   &::placeholder {
-    @apply u-text-forms u-opacity-100;
+    @apply u-text-form-text-placeholder u-opacity-100;
   }
 
   &:disabled,
   &[readonly] {
     @apply u-bg-disabled u-border-disabled u-opacity-100;
+  }
+}
+
+
+
+select {
+  background-image: $form-select-indicator;
+  background-repeat: no-repeat;
+  background-position: right theme('spacing.xs') center;
+  background-size: 16px 12px;
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    padding-right: theme('spacing.xs');
+    background-image: none;
+  }
+}
+
+
+
+
+
+input[type=checkbox],
+input[type=radio] {
+  width: $form-check-input-width;
+  height: $form-check-input-width;
+  vertical-align: middle;
+  background-color: $form-check-input-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid $form-check-input-border;
+  appearance: none;
+  color-adjust: exact; // Keep themed appearance for print
+  cursor: pointer;
+
+  &:active {
+    filter: brightness(90%);
+  }
+
+  &:focus {
+    border-color: $form-check-input-focus-border;
+    outline: 0;
+    box-shadow: $form-check-input-focus-box-shadow;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    filter: none;
+    opacity: $form-check-input-disabled-opacity;
+  }
+}
+
+
+input[type="checkbox"] {
+  border-radius: $form-check-input-border-radius;
+
+  &:indeterminate {
+    background-color: $form-check-input-indeterminate-bg-color;
+    border-color: $form-check-input-indeterminate-border-color;
+  }
+
+  &:checked {
+    background-color: $form-check-input-checked-bg-color;
+    border-color: $form-check-input-checked-border-color;
+    background-image: $form-check-input-checked-bg-image;
+
+  }
+}
+
+input[type="radio"] {
+  border-radius: $form-check-radio-border-radius;
+
+  &:checked {
+    background-color: $form-check-input-checked-bg-color;
+    border-color: $form-check-input-checked-border-color;
+    background-image: $form-check-radio-checked-bg-image;
   }
 }

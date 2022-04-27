@@ -1,3 +1,34 @@
+html {
+  @apply u-bg-slate-100;
+  color: theme('colors.body');
+  font-family: theme('fontFamily.body');
+  font-size: 1rem;
+  line-height: 1.125;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: -webkit-fill-available;
+  line-height: 1.5;
+}
+
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 img {
   @apply u-max-w-full;
 }
@@ -7,7 +38,7 @@ label {
 }
 
 legend {
-  @apply u-text-md;
+  @apply u-text-md u-text-md;
 }
 
 p {
@@ -40,12 +71,17 @@ h6, .h6,
 .display-1,
 .display-2,
 .display-3 {
-  @apply u-font-heading;
+  @apply u-font-heading u-font-bold;
   margin-bottom: .5em;
 }
 
 strong, .strong {
   @apply u-font-bold;
+}
+
+
+.editor-post-title__input {
+
 }
 
 .h1, h1 {
