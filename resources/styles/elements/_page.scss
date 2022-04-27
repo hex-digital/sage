@@ -46,7 +46,7 @@ $spacing: theme('spacing.sm');
 }
 
 #site-content {
-  min-height: calc(100vh - theme('height.masthead-height') - theme('height.footer-height'));
+  min-height: calc(100vh - theme('masthead.masthead-height') - theme('masthead.footer-height'));
   padding-top: $spacing;
   padding-bottom: $spacing;
 }

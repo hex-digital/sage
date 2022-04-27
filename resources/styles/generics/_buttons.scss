@@ -8,12 +8,10 @@
   u-uppercase
   u-rounded-lg
   u-shadow-md
-    u-border
-    u-transition
-    u-ease-easeOutQuart
-    u-duration-snail;
-
-  font-family: theme('fontFamily.button');
+  u-border
+  u-transition
+  u-ease-easeOutQuart
+  u-duration-snail u-font-button;
 
   &[disabled],
   &.disabled,

@@ -10,6 +10,7 @@ const { activeBreakpoint } = require('./tools/tailwind/captainActiveBreakpoint')
 const { frame } = require('./tools/tailwind/captainFrame');
 const { layout } = require('./tools/tailwind/captainLayout');
 const { wrapper } = require('./tools/tailwind/captainWrapper');
+const { masthead } = require('./tools/tailwind/masthead')
 
 module.exports = {
   content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}'],
@@ -39,6 +40,7 @@ module.exports = {
       fontSize,
       colors,
     },
+    masthead,
     fontFamily,
     fontWeight,
     letterSpacing,

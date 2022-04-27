@@ -1,3 +1,12 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@use 'tailwindcss/base' as tw-b;
+@use 'generics';
+@use 'tailwindcss/components' as tw-c;
+@use 'blocks';
+@use 'tailwindcss/utilities' as tw-u;
+@use 'utilities';
+
+.editor-styles-wrapper {
+	font-family: inherit !important;
+  max-width: theme('screens.lg.min');
+  padding: 0 20px;
+}

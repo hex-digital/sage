@@ -12,13 +12,19 @@
       justify-content: space-between;
       text-transform: uppercase;
       font-family: theme('fontFamily.button');
+      color: theme('masthead.navigation-link-color');
+      background: theme('masthead.navigation-link-bg');
+      &:hover {
+        color: theme('masthead.navigation-link-color-hover');
+        background-color: theme('masthead.navigation-link-bg-hover');
+      }
     }
 
 
 // Menu Animations
 // ----------------------------------------------------------------
 .has-menu-animation {
-  $offset : calc( theme('width.mobile-navigation-offset') * -1 );
+  $offset : calc( theme('masthead.navigation-offset-mobile') * -1 );
   transition: all theme('transitionDuration.goat') linear;
 
   .has-navigation-active & {

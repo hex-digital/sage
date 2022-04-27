@@ -94,8 +94,6 @@ export const HEX = {
 			const $el = $(event.currentTarget),
 				$parent = $el.parent('li');
 
-        console.log($el);
-
 			// Force next navigation level to be shown
 			$parent.addClass('is-expanded').siblings().removeClass('is-expanded');
 

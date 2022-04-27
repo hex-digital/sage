@@ -2,34 +2,54 @@
 
 // Masthead
 // ----------------------------------------------------------------
-body {
-  padding-top: theme('height.masthead-height');
-}
-
 #site-masthead {
-  background-color: theme('colors.white');
+  background-color: theme('masthead.masthead-bg');
   position: fixed;
   z-index: theme('zIndex.masthead');
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid theme('colors.border');
-
-  @screen md-down {
-    .admin-bar & {
-      top: theme('height.wordpress-admin-bar-mobile');
-    }
-  }
-  @screen md {
-    .admin-bar & {
-      top: theme('height.wordpress-admin-bar');
-    }
-  }
+  border-bottom: 1px solid theme('masthead.masthead-border-color');
 }
 
   .site-masthead__inner {
-    height: theme('height.masthead-height');
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+@screen md-down {
+  body {
+    padding-top: theme('masthead.masthead-height-mobile');
+  }
+  .masthead-logo {
+    height: theme('masthead.logo-height-mobile');
+  }
+  #site-masthead {
+    .admin-bar & {
+      top: theme('height.wordpress-admin-bar-mobile');
+    }
+  }
+  .site-masthead__inner {
+    height: theme('masthead.masthead-height-mobile');
+  }
+}
+
+
+
+@screen md {
+  body {
+    padding-top: theme('masthead.masthead-height');
+  }
+  .masthead-logo {
+    height: theme('masthead.logo-height');
+  }
+  #site-masthead {
+    .admin-bar & {
+      top: theme('height.wordpress-admin-bar');
+    }
+  }
+  .site-masthead__inner {
+    height: theme('masthead.masthead-height');
+  }
+}
