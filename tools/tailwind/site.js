@@ -27,5 +27,8 @@ exports.mainnav = {
 
 exports.footer = {
   'height': pxToRem(200),
-  'bg': colors.white
+  'bg': colors.white,
+
+  'link-color' : colors.dark,
+  'link-color-hover' : colors.dark
 }

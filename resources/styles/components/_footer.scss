@@ -1,5 +1,24 @@
+// Footer
+// ----------------------------------------------------------------
 #site-footer {
   background-color: theme('footer.bg');
-  min-height: theme('footer.height');
   border-top: 1px solid theme('masthead.border-color');
 }
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: theme('footer.height');
+    padding: theme('spacing.sm') 0;
+  }
+
+    .menu-footer-link {
+      font-family: theme('fontFamily.button');
+      font-size: theme('fontSize.xs');
+      color: theme('footer.link-color');
+      text-transform: uppercase;
+
+      &:hover {
+        color: theme('footer.link-color-hover');
+      }
+    }

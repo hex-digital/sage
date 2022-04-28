@@ -106,7 +106,8 @@
 	// Menu Links
 	// ----------------------------------------------------------------
 	.menu-main-link {
-    padding: theme('spacing.sm') theme('spacing.sm');
+    font-size: theme('fontSize.xs');
+    padding: theme('spacing.xs') theme('spacing.xs');
   }
 
 	// Top Level
@@ -117,9 +118,7 @@
 	.level-1-link {
 		text-align: center;
 		.current-menu-parent > &,
-		.current-menu-item & {
-
-		}
+		.current-menu-item & {}
 	}
 
 	// Flyout Menus
