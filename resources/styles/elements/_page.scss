@@ -3,11 +3,11 @@
 $spacing: theme('spacing.md');
 
 .content__wrapper {
-  @apply u-bg-white u-border-secondary-default u-border-y-4;
+
 
 }
 .container {
-  max-width: theme('screens.md.min');
+  max-width: theme('screens.xl.min');
   margin: 0 auto;
   padding-left: $spacing;
   padding-right: $spacing;

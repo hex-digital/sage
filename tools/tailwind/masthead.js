@@ -4,7 +4,7 @@ const { colors } = require('./colors');
 exports.masthead = {
   'logo-height': pxToRem(80),
   'logo-height-mobile': pxToRem(60),
-  'masthead-height': pxToRem(120),
+  'masthead-height': pxToRem(100),
   'masthead-height-mobile': pxToRem(80),
 
   'masthead-bg': colors.white,

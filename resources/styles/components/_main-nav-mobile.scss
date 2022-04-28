@@ -37,6 +37,18 @@
       border-bottom: 1px solid theme('colors.border');
     }
 
+// Menu Animations
+// ----------------------------------------------------------------
+.has-menu-animation {
+  $offset : calc( theme('masthead.navigation-offset-mobile') * -1 );
+  transition: all theme('transitionDuration.goat') linear;
+
+  .has-navigation-active & {
+    transform: translate3d($offset, 0, 0);
+  }
+}
+
+
 // Indicator Arrows
 // ----------------------------------------------------------------
 .menu-item-has-children > .menu-main-link,

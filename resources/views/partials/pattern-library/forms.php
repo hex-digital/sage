@@ -137,17 +137,6 @@
 						</fieldset>
 					</div>
 
-					<div class="form-group mb-2 has-success">
-						<label class="form-label" for="inputSuccess1">Valid input</label>
-						<input type="text" value="correct value" class="form-control is-valid" id="inputValid">
-						<div class="valid-feedback">Success! You've done it.</div>
-					</div>
-
-					<div class="form-group mb-2 has-danger">
-						<label class="form-label" for="inputDanger1">Invalid input</label>
-						<input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
-						<div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
-					</div>
 
 					<div class="form-group u-mb-md">
 						<label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
@@ -164,20 +153,6 @@
 						<input class="form-control form-control-sm" type="text" placeholder="Small input" id="inputSmall">
 					</div>
 
-					<div class="form-group u-mb-md">
-						<label class="form-label">Input addons</label>
-						<div class="form-group u-mb-md">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text">$</span>
-								</div>
-								<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-								<div class="input-group-append">
-									<span class="input-group-text">.00</span>
-								</div>
-							</div>
-						</div>
-					</div>
 				</fieldset>
 			</form>
 

@@ -3,7 +3,7 @@
 // --------------------------------------------------------
 .btn {
   @apply u-py-xs
-  u-px-lg
+  u-px-md
   u-font-semibold
   u-uppercase
   u-rounded-lg
@@ -26,7 +26,7 @@
 }
 
 .btn-lg {
-  @apply u-py-sm u-px-xl u-rounded-xl u-text-md;
+  @apply u-py-xs u-px-md u-rounded-xl u-text-lg;
 }
 
 .btn-pill {

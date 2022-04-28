@@ -21,17 +21,8 @@
     }
 
 
-// Menu Animations
+// Search and menu overlays
 // ----------------------------------------------------------------
-.has-menu-animation {
-  $offset : calc( theme('masthead.navigation-offset-mobile') * -1 );
-  transition: all theme('transitionDuration.goat') linear;
-
-  .has-navigation-active & {
-    transform: translate3d($offset, 0, 0);
-  }
-}
-
 .overlay__mobile-menu {
   @include m.make-site-overlay( theme('zIndex.overlay') );
   .has-navigation-active & {

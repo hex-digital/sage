@@ -7,14 +7,15 @@ exports.fontFamily = {
   form: ['Euclid', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
 };
 
+
 exports.fontSize = {
   // Create map of fonts with px keys and rem values, e.g. { 16: 1rem, 32: 2rem }
-  'xs': pxToRem(12),
-  'sm': pxToRem(14),
   'base': pxToRem(16),
-  'md': pxToRem(24),
-  'lg': pxToRem(36),
-  'xl': pxToRem(48),
+  'xs': pxToRem(14),
+  'sm': pxToRem(16),
+  'md': pxToRem(18),
+  'lg': pxToRem(24),
+  'xl': pxToRem(32),
   '2xl': pxToRem(80),
   '3xl': pxToRem(90),
   '4xl': pxToRem(100),
@@ -33,12 +34,12 @@ exports.fontWeight = {
 };
 
 exports.lineHeight = {
-  '1.125': '1.125',
-  '1.333': '1.333',
-  '1.4': '1.4',
-  '1.5': '1.5',
-  '1.625': '1.625',
-  '1.7': '1.7',
+  'none': 1,
+  'tight': 1.25,
+  'snug': 1.375,
+  'normal': 1.5,
+  'relaxed': 1.625,
+  'loose': 2,
 };
 
 exports.letterSpacing = {

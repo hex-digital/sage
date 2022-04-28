@@ -3,9 +3,9 @@ const alpha = (clr, val) => Color(clr).alpha(val).rgb().string()
 const lighten = (clr, val) => Color(clr).lighten(val).rgb().string()
 const darken = (clr, val) => Color(clr).darken(val).rgb().string()
 
-const primary = '#474052';
-const secondary = '#ed706f';
-const link = '#2B68D7';
+const primary = '#042270';
+const secondary = '#008CD1';
+const link = '#008CD1';
 
 exports.colors = {
   transparent: 'transparent',
@@ -46,11 +46,30 @@ exports.colors = {
     'darker': darken('#FAB513', 0.2),
   },
   'danger' : {
-    'lighter': lighten('#eb1c23', 0.2),
-    'default': '#eb1c23',
-    'darker': darken('#eb1c23', 0.2),
+    'lighter': lighten('rgb(153, 27, 27)', 0.2),
+    'default': 'rgb(153, 27, 27)',
+    'darker': darken('rgb(153, 27, 27)', 0.2),
   },
   'light' : '#e9ecef',
   'dark' : '#6c757d',
   'border' : '#ced4da',
+  'form' : {
+    'text' : {
+      'default': '#6c757d',
+      'hover': darken('#6c757d', .5),
+      'focus': darken('#6c757d', .5),
+      'placeholder': lighten('#6c757d', .2),
+    },
+    'border': {
+      'default': '#ced4da',
+      'hover': lighten('#ced4da', 0.2),
+      'focus': primary,
+      'shadow': lighten(secondary, .9)
+    },
+    'bg': {
+      'default': '#ffffff',
+      'hover': '#e9ecef',
+      'focus': '#ffffff',
+    }
+  }
 };
