@@ -3,13 +3,13 @@
 // Masthead
 // ----------------------------------------------------------------
 #site-masthead {
-  background-color: theme('masthead.masthead-bg');
+  background-color: theme('masthead.bg');
   position: fixed;
   z-index: theme('zIndex.masthead');
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid theme('masthead.masthead-border-color');
+  border-bottom: 1px solid theme('masthead.border-color');
 }
 
   .site-masthead__inner {
@@ -20,18 +20,18 @@
 
 @screen md-down {
   body {
-    padding-top: theme('masthead.masthead-height-mobile');
+    padding-top: theme('masthead.height-mobile');
   }
   .masthead-logo {
     height: theme('masthead.logo-height-mobile');
   }
   #site-masthead {
     .admin-bar & {
-      top: theme('height.wordpress-admin-bar-mobile');
+      top: theme('wordpress.admin-bar-mobile');
     }
   }
   .site-masthead__inner {
-    height: theme('masthead.masthead-height-mobile');
+    height: theme('masthead.height-mobile');
   }
 }
 
@@ -39,17 +39,17 @@
 
 @screen md {
   body {
-    padding-top: theme('masthead.masthead-height');
+    padding-top: theme('masthead.height');
   }
   .masthead-logo {
     height: theme('masthead.logo-height');
   }
   #site-masthead {
     .admin-bar & {
-      top: theme('height.wordpress-admin-bar');
+      top: theme('wordpress.admin-bar');
     }
   }
   .site-masthead__inner {
-    height: theme('masthead.masthead-height');
+    height: theme('masthead.height');
   }
 }

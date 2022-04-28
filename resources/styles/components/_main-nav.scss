@@ -12,11 +12,11 @@
       justify-content: space-between;
       text-transform: uppercase;
       font-family: theme('fontFamily.button');
-      color: theme('masthead.navigation-link-color');
-      background: theme('masthead.navigation-link-bg');
+      color: theme('mainnav.link-color');
+      background: theme('mainnav.link-bg');
       &:hover {
-        color: theme('masthead.navigation-link-color-hover');
-        background-color: theme('masthead.navigation-link-bg-hover');
+        color: theme('mainnav.link-color-hover');
+        background-color: theme('mainnav.link-bg-hover');
       }
     }
 

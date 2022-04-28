@@ -1,5 +1,4 @@
 const { colors } = require('./tools/tailwind/colors');
-const { widths, heights } = require('./tools/tailwind/dimensions');
 const { fontFamily, fontSize, fontWeight, lineHeight, letterSpacing } = require('./tools/tailwind/typography');
 const { screens } = require('./tools/tailwind/screens');
 const { skipLink } = require('./tools/tailwind/skipLink');
@@ -10,7 +9,7 @@ const { activeBreakpoint } = require('./tools/tailwind/captainActiveBreakpoint')
 const { frame } = require('./tools/tailwind/captainFrame');
 const { layout } = require('./tools/tailwind/captainLayout');
 const { wrapper } = require('./tools/tailwind/captainWrapper');
-const { masthead } = require('./tools/tailwind/masthead')
+const { masthead, mainnav, footer, wordpress } = require('./tools/tailwind/site')
 
 module.exports = {
   content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}'],
@@ -34,12 +33,13 @@ module.exports = {
   theme: {
     extend: {
       activeBreakpoint,
-      height: () => (heights),
-      minHeight: () => (heights),
       fontSize,
       colors,
     },
     masthead,
+    mainnav,
+    footer,
+    wordpress,
     fontFamily,
     fontWeight,
     letterSpacing,

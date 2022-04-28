@@ -7,9 +7,9 @@
   z-index: theme('zIndex.navbar');
 
   height: 100vh;
-  width: calc( 100vw - theme('masthead.navigation-offset-mobile') );
+  width: calc( 100vw - theme('mainnav.offset-mobile') );
 
-  top: theme('masthead.masthead-height-mobile');
+  top: theme('masthead.height-mobile');
   right: 0;
   bottom: 0;
   background-color: theme('colors.white');
@@ -22,7 +22,7 @@
 
 
   .admin-bar & {
-    top: calc( theme('masthead.masthead-height-mobile') +  theme('height.wordpress-admin-bar-mobile') );
+    top: calc( theme('masthead.height-mobile') +  theme('wordpress.admin-bar-mobile') );
   }
 
   .has-navigation-active & {
@@ -40,7 +40,7 @@
 // Menu Animations
 // ----------------------------------------------------------------
 .has-menu-animation {
-  $offset : calc( theme('masthead.navigation-offset-mobile') * -1 );
+  $offset : calc( theme('mainnav.offset-mobile') * -1 );
   transition: all theme('transitionDuration.goat') linear;
 
   .has-navigation-active & {
