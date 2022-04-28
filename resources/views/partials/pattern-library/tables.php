@@ -1,10 +1,10 @@
 <!-- Tables
 ================================================== -->
-<div class="bs-docs-section mb-5">
+<div class="hex-docs-section mb-5">
 
-	<h1 class="bs-docs-title" id="tables">Tables</h1>
+	<h1 class="hex-docs-title u-bg-primary-default" id="tables">Tables</h1>
 
-	<div class="bs-component u-overflow-x-auto">
+	<div class="hex-component u-overflow-x-auto">
 		<table class="u-mb-lg">
 			<thead>
 				<tr>

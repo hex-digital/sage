@@ -12,28 +12,27 @@
   @include('partials.pattern-library.forms')
 
   <style>
-    .bs-docs-section {
+    .hex-docs-section {
       border: solid 1px silver;
       border-bottom: solid 3px black;
+      background: white;
       padding: 1rem;
       padding-top: 0;
       position: relative;
     }
-    .bs-docs-title {
+    .hex-docs-title {
       margin: 0 -1rem;
-      margin-bottom: 2rem;
-      font-size: 1.5rem;
-      background: black;
-      border-bottom: solid 3px black;
+      margin-bottom: 1rem;
+      font-size: 1rem;
       color: white;
-      padding: .8rem;
+      padding: .5rem;
       text-transform: uppercase;
       position: sticky;
       z-index: 800;
       top: 100px;
     }
-    .logged-in .bs-docs-title {
-      top: 32px;
+    .logged-in .hex-docs-title {
+      top: 132px;
     }
 
   </style>

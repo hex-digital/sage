@@ -1,9 +1,9 @@
-<div class="bs-docs-section mb-5">
+<div class="hex-docs-section mb-5">
 
-	<h1 class="bs-docs-title" id="buttons">Buttons</h1>
+	<h1 class="hex-docs-title u-bg-primary-default" id="buttons">Buttons</h1>
 
   <div class="u-grid u-grid-cols-1 sm:u-grid-cols-2 md:u-grid-cols-3 u-gap-md">
-		<div class="bs-component">
+		<div class="hex-component">
 			<h2 class="h3 u-mb-md">Normal Buttons</h2>
 			<p class="u-mb-sm">
 				<button type="button" class="btn btn-primary">Primary</button>
@@ -38,7 +38,7 @@
 
 		</div>
 
-    <div class="bs-component">
+    <div class="hex-component">
 
     <h2 class="h3 u-mb-md">Large Buttons</h2>
 			<p class="u-mb-sm">
@@ -80,7 +80,7 @@
     </div>
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<h2 class="h3 u-mb-md">Traffic light Buttons</h2>
 			<p class="u-mb-sm">
         <button type="button" class="btn btn-success">Success</button>

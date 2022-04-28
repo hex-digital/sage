@@ -1,13 +1,13 @@
 <!-- Typography
 ================================================== -->
-<div class="bs-docs-section mb-5">
+<div class="hex-docs-section mb-5">
 
-	<h1 class="bs-docs-title" id="typography">Typography</h1>
+	<h1 class="hex-docs-title u-bg-primary-default" id="typography">Typography</h1>
 
 	<div class="u-grid u-grid-cols-1 sm:u-grid-cols-2 md:u-grid-cols-3 u-gap-md">
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<h2>General</h2>
 			<p>Nullam quis risus eget
 				<a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient
@@ -21,7 +21,7 @@
 
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<h2>Emphasis</h2>
 			<p>You can use the mark tag to <mark>highlight</mark> text.</p>
 			<p><del>This line of text is meant to be treated as deleted text.</del></p>
@@ -38,7 +38,7 @@
 
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<h2>Blockquote</h2>
 			<blockquote class="blockquote">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -50,7 +50,7 @@
 
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<h1>Heading 1</h1>
 			<h2>Heading 2</h2>
 			<h3>Heading 3</h3>
@@ -60,7 +60,7 @@
 		</div>
 
 
-		<div class="bs-component">
+		<div class="hex-component">
 			<p class="h1">
 				Heading 1
 			</p>
@@ -81,7 +81,7 @@
 			</p>
 		</div>
 
-    <div class="bs-component">
+    <div class="hex-component">
 			<p class="display-1">
 				Display 1
 			</p>

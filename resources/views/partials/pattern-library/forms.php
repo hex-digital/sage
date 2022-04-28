@@ -1,12 +1,12 @@
 <!-- Forms
 ================================================== -->
-<div class="bs-docs-section mb-5">
-	<h1 class="bs-docs-title" id="forms">Forms</h1>
+<div class="hex-docs-section mb-5">
+	<h1 class="hex-docs-title u-bg-primary-default" id="forms">Forms</h1>
 
   <div class="u-grid  u-grid-cols-1 sm:u-grid-cols-2 u-gap-md">
 
-			<div class="bs-component">
-				<form>
+			<div class="hex-component">
+				<form autocomplete="off">
 					<fieldset>
 						<legend>Layout</legend>
 
@@ -116,7 +116,7 @@
 			</div>
 
 
-			<form class="bs-component">
+			<form class="hex-component">
 				<fieldset>
 					<legend>Utilities</legend>
 
