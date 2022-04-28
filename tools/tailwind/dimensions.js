@@ -4,7 +4,3 @@ exports.heights = {
   'wordpress-admin-bar': '32px',
   'wordpress-admin-bar-mobile': '46px',
 };
-
-exports.widths = {
-
-};

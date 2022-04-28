@@ -1,0 +1,24 @@
+// Widgets
+// ----------------------------------------------------------------
+.widget {
+  @apply u-mb-md u-bg-white u-border-border u-border u-p-sm;
+}
+
+
+// Search Widget
+// ----------------------------------------------------------------
+.wp-block-search {
+  @apply u-flex u-items-center u-flex-wrap
+}
+
+.wp-block-search__label {
+  @apply h2;
+}
+
+.wp-block-search__inside-wrapper  {
+  @apply u-flex-1
+}
+
+.wp-block-search__button {
+  @apply btn btn-primary;
+}

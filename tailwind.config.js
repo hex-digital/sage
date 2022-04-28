@@ -35,7 +35,6 @@ module.exports = {
     extend: {
       activeBreakpoint,
       height: () => (heights),
-      width: () => (widths),
       minHeight: () => (heights),
       fontSize,
       colors,
