@@ -38,7 +38,6 @@
 // --------------------------------------------------------
 .btn-primary {
   @apply u-text-white u-bg-primary-default u-border-primary-default;
-  background-color: theme('colors.primary.default');
 
   &:hover {
     @apply u-text-white u-bg-primary-darker u-border-primary-darker;
