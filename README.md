@@ -64,26 +64,57 @@ Make sure all dependencies have been installed before moving on:
 
 ## Theme installation
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+- Install Node : We like to use Node Version Manager or 'NVM' : https://github.com/nvm-sh/nvm
 
-```sh
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
-```
+- Install Yarn : https://yarnpkg.com/getting-started/install
 
-To install the latest development version of Sage, add `dev-main` to the end of the command:
+- Install Composer : https://getcomposer.org/ and follow the instructions here : https://getcomposer.org/doc/00-intro.md#locally
 
-```sh
-$ composer create-project roots/sage your-theme-name dev-main
-```
+- Make sure you move the `composer.phar` into `/usr/local/bin/composer` so that it is accessbile globally.
 
-Make sure that you have [Acorn installed](https://docs.roots.io/acorn/2.x/installation/).
+- Add and update `.env` with your local dev URL, for example :
+
+`BROWSER_SYNC_PROXY='http://sandbox.local'`
+
+`APP_ENV='development'`
+
+- Run `yarn` from the theme folder to install dependencies
+
+- Once all of that is done, run `yarn dev` to start a watch build that compiles as you work, or `yarn build` for a production build.
+
+## Theme setup
+
+- Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
+
+- Edit the `.js` files in the `tools/tailwind` folder to customize the theme colours, fonts and other visual properties. We have set some defaults to get you started.
+
+
+## Some useful commands
+
+### Yarn
+- `yarn dev` — Compile assets when file changes are made, start Browsersync session
+- `yarn build` — Compile assets for production
+
+### Acorn commands
+To access your site's shell and run Acorn commands, using Local WP right click on your site listed in the left column, and select 'Open site shell'. This will open a terminal where you can run the commands below :
+
+- `wp acorn acf:field Example` to generate a new reusable field partial that you can share between various different Acorn components.
+- `wp acorn acf:block Example` to generate a ACF field based block
+- `wp acorn acf:widget Example` to generate a ACF field based widget
+- `wp acorn acf:options Example` to generate a ACF field based options page
+- `wp acorn make:component Example` to create a new view component class
+- `wp acorn make:composer Example` to create a new view composer class
+- `wp acorn make:provider Example` to create a new service provider class
+- `wp acorn optimize` you you are battling to generate new Acorn components
+
+
 
 ## Theme structure
 
 ```sh
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
+│   ├── Blocks/           # → ACF Blocks
 │   ├── Providers/        # → Service providers
 │   ├── View/             # → View models
 │   ├── filters.php       # → Theme filters
@@ -105,38 +136,10 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │       ├── layouts/      # → Base templates
 │       ├── partials/     # → Partial templates
         └── sections/     # → Section templates
+├── tools/                #
+│   └── tailwind/         # → Tailwind configuration and settings
 ├── screenshot.png        # → Theme screenshot for WP admin
 ├── style.css             # → Theme meta information
 ├── vendor/               # → Composer packages (never edit)
 └── bud.config.js         # → Bud configuration
 ```
-
-## Theme setup
-
-Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
-
-## Theme development
-
-- Run `yarn` from the theme directory to install dependencies
-- Update `bud.config.js` with your local dev URL
-
-### Build commands
-
-- `yarn dev` — Compile assets when file changes are made, start Browsersync session
-- `yarn build` — Compile assets for production
-
-## Sage sponsors
-
-Help support our open-source development efforts by [becoming a GitHub sponsor](https://github.com/sponsors/roots) or [patron](https://www.patreon.com/rootsdev).
-
-<a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="200" height="150"></a> <a href="https://www.c21redwood.com/"><img src="https://cdn.roots.io/app/uploads/c21redwood.svg" alt="C21 Redwood Realty" width="200" height="150"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="200" height="150"></a> <a href="https://icons8.com/"><img src="https://cdn.roots.io/app/uploads/icons8.svg" alt="Icons8" width="200" height="150"></a> <a href="https://generodigital.com/"><img src="https://cdn.roots.io/app/uploads/genero.svg" alt="Genero" width="200" height="150"></a> <a href="https://40q.agency/"><img src="https://cdn.roots.io/app/uploads/40q.svg" alt="40Q" width="200" height="150"></a> <a href="https://pantheon.io/"><img src="https://cdn.roots.io/app/uploads/pantheon.svg" alt="Pantheon" width="200" height="150"></a>
-
-## Community
-
-Keep track of development and community news.
-
-- Join us on Roots Slack by becoming a [GitHub sponsor](https://github.com/sponsors/roots) or [patron](https://www.patreon.com/rootsdev)
-- Participate on the [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
