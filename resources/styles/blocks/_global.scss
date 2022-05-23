@@ -1,6 +1,63 @@
 @use '../settings' as *;
 @use '../tools/wrapper';
 
+
+// Some generic WordPress classes out of the box
+.align-text-right {
+  text-align: right;
+}
+.align-text-left {
+  text-align: left;
+}
+.align-text-center {
+  text-align: center;
+}
+
+.is-position-top {
+  vertical-align: top;
+}
+.is-position-bottom {
+  vertical-align: bottom;
+}
+.is-position-center {
+  vertical-align: middle;
+}
+
+.full-height {}
+.is-style-light {}
+
+
+
+.entry-content img {
+  margin: 0 0 theme('spacing.sm') 0;
+}
+.alignleft,
+img.alignleft {
+  margin-right: theme('spacing.sm');
+  display: inline;
+  float: left;
+}
+.alignright,
+img.alignright {
+  margin-left: theme('spacing.sm');
+  display: inline;
+  float: right;
+}
+.aligncenter,
+img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+.alignnone,
+img.alignnone {
+  margin: unset;
+}
+
+
+
+
 @mixin gutenberg-styles {
 
   a:not(.c-btn) {
@@ -10,7 +67,7 @@
   ol,
   ul {
     list-style-type: disc;
-    margin-left: theme('spacing.40');
+    margin-left: theme('spacing.sm');
   }
 
   .alignfull {
@@ -25,9 +82,9 @@
 }
 
 @mixin gutenberg-block-spacing {
-  --block-spacing: theme('spacing.22');
+  --block-spacing: theme('spacing.sm');
   @screen md {
-    --block-spacing: theme('spacing.44');
+    --block-spacing: theme('spacing.md');
   }
 
   > * + * {
@@ -40,22 +97,21 @@
   }
 
   > * + li {
-    line-height: theme('spacing.26');
-    padding-bottom: theme('spacing.30');
+    padding-bottom: theme('spacing.sm');
   }
 
   > * + .has-heading-small-font-size,
   > * + .wp-block-image {
-    margin-top: theme('spacing.64');
+    margin-top: theme('spacing.sm');
   }
 
   > * + .has-heading-xsmall-font-size {
-    margin-top: theme('spacing.24');
+    margin-top: theme('spacing.sm');
   }
 
   > * + ul {
-    margin-top: theme('spacing.8');
-    margin-left: theme('spacing.16');
+    margin-top: theme('spacing.xs');
+    margin-left: theme('spacing.sm');
   }
 
   $_block-sections: '.wp-block-columns' '.wp-block-cover' '.wp-block-group' '.wp-block-hex-block-section';
