@@ -151,10 +151,24 @@ class Example extends Block
     {
         $example = new FieldsBuilder('example');
 
+
         $example
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addRelationship('relationship_field', [
+                'label' => 'Posts',
+                'instructions' => 'Some instructions here',
+                'required' => 0,
+                "post_type" => [
+                    "post"
+                ],
+                'filters' => [
+                    0 => 'search'
+                ],
+                'min' => 3,
+                'max' => 6,
+                'return_format' => 'id',
+            ]);
+
+
 
         return $example->build();
     }
