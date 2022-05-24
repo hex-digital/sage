@@ -2,6 +2,7 @@
 
 namespace App\Blocks;
 
+use WP_Query;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
@@ -19,21 +20,25 @@ class Example extends Block
      *
      * @var string
      */
-    public $description = 'A simple Example block.';
+    public $description = 'A simple example block.';
 
     /**
      * The block category.
      *
      * @var string
      */
-    public $category = 'formatting';
+    public $category = 'hex-blocks';
 
     /**
      * The block icon.
      *
      * @var string|array
      */
-    public $icon = 'editor-ul';
+    public $icon = array(
+        'background' => '#fff',
+        'foreground' => '#ff5043',
+        'src' => 'editor-ul',
+    );
 
     /**
      * The block keywords.
@@ -122,13 +127,7 @@ class Example extends Block
      *
      * @var array
      */
-    public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
-    ];
+    public $example = [];
 
     /**
      * Data to be passed to the block before rendering.
@@ -138,7 +137,7 @@ class Example extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'posts' => $this->posts(),
         ];
     }
 
@@ -150,7 +149,6 @@ class Example extends Block
     public function fields()
     {
         $example = new FieldsBuilder('example');
-
 
         $example
             ->addRelationship('relationship_field', [
@@ -178,9 +176,16 @@ class Example extends Block
      *
      * @return array
      */
-    public function items()
-    {
-        return get_field('items') ?: $this->example['items'];
+    public function posts() {
+        $posts = new WP_Query( array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'orderby' => 'post__in',
+            'post__in' => get_field('relationship_field')
+        ));
+
+
+        return $posts;
     }
 
     /**

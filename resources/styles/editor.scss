@@ -1,5 +1,8 @@
 @use 'tailwindcss/base' as tw-b;
-@use 'generics';
+@use 'generics/fonts';
+@use 'generics/typography';
+@use 'generics/buttons';
+
 @use 'tailwindcss/components' as tw-c;
 @use 'blocks';
 @use 'tailwindcss/utilities' as tw-u;

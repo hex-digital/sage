@@ -118,6 +118,25 @@ add_action('after_setup_theme', function () {
     add_theme_support('customize-selective-refresh-widgets');
 }, 20);
 
+
+/**
+ * Add a new category of blocks
+ *
+ * @return void
+ */
+add_action( 'block_categories', function ( $categories ) {
+    return array_merge(
+        $categories,
+        [
+            [
+                'slug'  => 'hex-blocks',
+                'title' => __( 'Hex Digital Blocks', 'sage' ),
+            ],
+        ]
+    );
+}, 10, 2 );
+
+
 /**
  * Register the theme sidebars.
  *
