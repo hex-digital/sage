@@ -105,7 +105,7 @@ To access your site's shell and run Acorn commands, using Local WP right click o
 - `wp acorn make:component Example` to create a new view component class
 - `wp acorn make:composer Example` to create a new view composer class
 - `wp acorn make:provider Example` to create a new service provider class
-- `wp acorn optimize` you you are battling to generate new Acorn components
+- `wp acorn optimize:clear` you you are battling to generate new Acorn components, run this to clear everything. Helps with using Poet and generating new custom post types
 
 
 
