@@ -39,5 +39,9 @@ module.exports = async (app) => {
     /**
      * Development URL to be used in the browser.
      */
-    .serve(process.env.BROWSER_SYNC_PROXY);
+    .serve(process.env.BROWSER_SYNC_PROXY)
+    /**
+     * Relative path to the public directory.
+     */
+    .setPublicPath(process.env.THEME_FOLDER);
 };
