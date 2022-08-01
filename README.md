@@ -79,6 +79,8 @@ Make sure all dependencies have been installed before moving on:
 
 `APP_ENV='development'`
 
+`THEME_FOLDER='/wp-content/themes/YOUR-THEME-NAME/public/'` Update `YOUR-THEME-NAME` with your theme folder name.
+
 - Run `yarn` from the theme folder to install dependencies
 
 - Once all of that is done, run `yarn dev` to start a watch build that compiles as you work, or `yarn build` for a production build.

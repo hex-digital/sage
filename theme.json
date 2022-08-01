@@ -24,10 +24,43 @@
     },
     "spacing": {
       "padding": true,
-      "units": ["px", "%", "em", "rem", "vw", "vh"]
+      "margin": true,
+      "units": ["px"]
+    },
+    "layout": {
+      "contentSize": "1380px",
+      "wideSize": "1380px"
+    },
+    "blocks": {
     },
     "typography": {
-      "customFontSize": false
+      "customFontSize": false,
+      "fontStyle": false,
+      "fontWeight": false,
+      "dropCap": false,
+      "letterSpacing": false,
+      "fontSizes": [
+        {
+          "name": "Small",
+          "slug": "small",
+          "size": "1rem"
+        },
+        {
+          "name": "Medium",
+          "slug": "medium",
+          "size": "1.125rem"
+        },
+        {
+          "name": "Large",
+          "slug": "large",
+          "size": "2.27rem"
+        },
+        {
+          "name": "Extra Large",
+          "slug": "x-large",
+          "size": "3rem"
+        }
+      ]
     }
   }
 }

@@ -2,25 +2,25 @@
 
 namespace App\Blocks;
 
-use WP_Query;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
+use function Roots\bundle;
 
-class Example extends Block
+class Banner extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Example';
+    public $name = 'Banner';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple example block.';
+    public $description = 'A simple Banner block.';
 
     /**
      * The block category.
@@ -36,9 +36,10 @@ class Example extends Block
      */
     public $icon = array(
         'background' => '#fff',
-        'foreground' => '#ff5043',
-        'src' => 'editor-ul',
+        'foreground' => '#17749C',
+        'src' => 'cover-image',
     );
+
 
     /**
      * The block keywords.
@@ -66,7 +67,7 @@ class Example extends Block
      *
      * @var string
      */
-    public $mode = 'edit';
+    public $mode = 'preview';
 
     /**
      * The default block alignment.
@@ -95,11 +96,11 @@ class Example extends Block
      * @var array
      */
     public $supports = [
-        'align' => true,
-        'align_text' => true,
-        'align_content' => true,
-        'full_height' => true,
-        'anchor' => true,
+        'align' => false,
+        'align_text' => false,
+        'align_content' => false,
+        'full_height' => false,
+        'anchor' => false,
         'mode' => true,
         'multiple' => true,
         'jsx' => true,
@@ -110,17 +111,7 @@ class Example extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    public $styles = [];
 
     /**
      * The block preview example data.
@@ -136,9 +127,7 @@ class Example extends Block
      */
     public function with()
     {
-        return [
-            'posts' => $this->posts(),
-        ];
+        return  $this->returnfields();
     }
 
     /**
@@ -148,44 +137,58 @@ class Example extends Block
      */
     public function fields()
     {
-        $example = new FieldsBuilder('example');
+        $banner = new FieldsBuilder('masthead_banner');
 
-        $example
-            ->addRelationship('relationship_field', [
-                'label' => 'Posts',
-                'instructions' => 'Some instructions here',
-                'required' => 0,
-                "post_type" => [
-                    "post"
-                ],
-                'filters' => [
-                    0 => 'search'
-                ],
-                'min' => 3,
-                'max' => 6,
-                'return_format' => 'id',
-            ]);
+        $banner
+            ->addImage('background_image', [
+                'label' => 'Background Image'
+            ])
+            ->addText('footer_text', [
+                'label' => 'Footer Text',
+        ]);
 
-
-
-        return $example->build();
+        return $banner->build();
     }
 
+
     /**
-     * Return the items field.
+     * Return all the fields
      *
      * @return array
      */
-    public function posts() {
-        $posts = new WP_Query( array(
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-            'orderby' => 'post__in',
-            'post__in' => get_field('relationship_field')
-        ));
+    public function returnfields() {
+        $image = '';
+        if(get_field('background_image')) {
+            $image = get_field('background_image')['sizes']['large'];
+            $image = " style='background-image: url(${image}) '";
+        }
 
+        $fields = [
+            'id' => $this->id(),
+            'classes' => $this->classes(),
+            'background' => $image,
+            'footer_text' => get_field('footer_text')
+        ];
 
-        return $posts;
+        return $fields;
+    }
+
+    /**
+     * Return the ID
+     *
+     * @return string
+     */
+    public function id() {
+        return $this->block->id;
+    }
+
+    /**
+     * Return the classes
+     *
+     * @return string
+     */
+    public function classes() {
+        return $this->classes;
     }
 
     /**
@@ -194,5 +197,7 @@ class Example extends Block
      * @return void
      */
     public function enqueue()
-    { }
+    {
+        bundle('blockBanner')->enqueue();
+    }
 }

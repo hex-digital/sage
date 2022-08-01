@@ -1,6 +1,6 @@
 @use 'tailwindcss/base' as tw-b;
 @use 'generics/fonts';
-@use 'generics/typography';
+
 @use 'generics/buttons';
 
 @use 'tailwindcss/components' as tw-c;
@@ -9,7 +9,7 @@
 @use 'utilities';
 
 .editor-styles-wrapper {
-	font-family: inherit !important;
-  max-width: theme('screens.lg.min');
-  padding: 0 20px;
+  font-family: theme('fontFamily.body');
+
+  @import 'generics/typography';
 }

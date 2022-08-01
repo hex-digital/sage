@@ -2,9 +2,9 @@ const { pxToRem } = require('@captaincss/captaincss/helpers');
 
 exports.fontFamily = {
   body: ['Merriweather', 'Georgia', 'serif' ],
-  heading: ['Euclid', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-  button: ['Euclid', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
-  form: ['Euclid', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+  heading: ['Euclid', 'sans-serif'],
+  button: ['Euclid', 'sans-serif'],
+  form: ['Euclid', 'sans-serif'],
 };
 
 

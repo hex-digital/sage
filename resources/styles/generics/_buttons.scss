@@ -2,16 +2,18 @@
 // Default classes
 // --------------------------------------------------------
 .btn {
-  @apply u-py-xs
-  u-px-md
-  u-font-semibold
-  u-uppercase
-  u-rounded-lg
-  u-shadow-md
-  u-border
-  u-transition
-  u-ease-easeOutQuart
-  u-duration-snail u-font-button;
+  @apply u-transition
+    u-ease-easeOutQuart
+    u-duration-snail;
+
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 0;
+  border: none;
+  font-family: theme('fontFamily.button');
+  padding: 17px 35px;
 
   &[disabled],
   &.disabled,

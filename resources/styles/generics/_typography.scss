@@ -1,7 +1,7 @@
 html {
-  @apply u-bg-slate-100;
   color: theme('colors.body');
   font-family: theme('fontFamily.body');
+  background-color: theme('colors.light');
   font-size: 1rem;
   line-height: 1.125;
   scroll-behavior: smooth;
@@ -14,6 +14,8 @@ html {
 body {
   min-height: -webkit-fill-available;
   line-height: 1.5;
+  font-size: theme('fontSize.base');
+  letter-spacing: 0.03em;
 }
 
 
@@ -71,8 +73,10 @@ h6, .h6,
 .display-1,
 .display-2,
 .display-3 {
-  @apply u-font-heading u-font-bold;
+  font-family: theme('fontFamily.heading');
+  font-weight: theme('fontWeight.black');
   margin-bottom: .5em;
+  letter-spacing: 0.05em;
 }
 
 strong, .strong {
@@ -84,25 +88,30 @@ strong, .strong {
 
 }
 
-.h1, h1 {
-  @apply u-text-xl;
-}
-.h2, h2 {
-  @apply u-text-lg;
-}
-.h3, h3 {
-  @apply u-text-md;
-}
-.h4, h4 {
-  @apply u-text-base;
-}
-.h5, h5 {
-  @apply u-text-base;
-}
-.h6, h6 {
-  @apply u-text-sm;
+// For positioning an anchor link when there is a fixed masthead positioned above content
+.anchor {
+  position: relative;
+  top: calc( -1 * theme('masthead.height') );
 }
 
+.h1 {
+  font-size: theme('fontSize.xl');
+}
+.h2 {
+  font-size: theme('fontSize.lg');
+}
+.h3 {
+  font-size: theme('fontSize.md');
+}
+.h4 {
+  font-size: theme('fontSize.sm');
+}
+.h5 {
+  font-size: theme('fontSize.base');
+}
+.h6 {
+  font-size: theme('fontSize.xs');
+}
 
 .display-1 {
   @apply u-text-4xl;

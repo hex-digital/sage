@@ -1,0 +1,31 @@
+.wp-block-banner {
+  background: no-repeat center center;
+  background-size: cover;
+}
+  .wp-block-banner__overlay {
+    background-color: rgba($color: #000000, $alpha: .3);
+  }
+    .wp-block-banner__inner {
+      height: 100vh;
+      max-height: 1000px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+      position: relative;
+    }
+
+
+    .wp-block-banner__footertext {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+@screen md-down {
+  .wp-block-banner__inner {
+    height: 80vh;
+  }
+}
