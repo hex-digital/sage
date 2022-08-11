@@ -92,7 +92,7 @@ Make sure all dependencies have been installed before moving on:
 - Edit the `.js` files in the `tools/tailwind` folder to customize the theme colours, fonts and other visual properties. We have set some defaults to get you started.
 
 
-## Some useful commands
+## Some useful commands and markup
 
 ### Yarn
 - `yarn dev` — Compile assets when file changes are made, start Browsersync session
@@ -111,6 +111,12 @@ To access your site's shell and run Acorn commands, using Local WP right click o
 - `wp acorn optimize:clear` you you are battling to generate new Acorn components, run this to clear everything. Helps with using Poet and generating new custom post types
 
 
+
+### Components
+We have some reusable components included in the theme, which you can use in your development:
+- An image component, that saves you creating markup each time. If you use ACF fields, and return an image array data, you can use the following in your blade templates. It will wrap a FIGURE element automatically if you provide a caption in the CMS, as well as TITLE and ALT attributes if provided.
+  - `<x-image :image="$image" :src="$image['sizes']['thumbnail']" :w="$image['sizes']['thumbnail-width']" :h="$image['sizes']['thumbnail-height']" :c="'myClassname'" />`
+-
 
 ## Theme structure
 
