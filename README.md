@@ -114,9 +114,10 @@ To access your site's shell and run Acorn commands, using Local WP right click o
 
 ### Components
 We have some reusable components included in the theme, which you can use in your development:
-- An image component, that saves you creating markup each time. If you use ACF fields, and return an image array data, you can use the following in your blade templates. It will wrap a FIGURE element automatically if you provide a caption in the CMS, as well as TITLE and ALT attributes if provided.
+- An IMG component, that saves you creating markup each time. If you use ACF fields, and return an image array data, you can use the following in your blade templates. It will wrap a FIGURE element automatically if you provide a caption in the CMS, as well as TITLE and ALT attributes if provided.
   - `<x-image :image="$image" :src="$image['sizes']['thumbnail']" :w="$image['sizes']['thumbnail-width']" :h="$image['sizes']['thumbnail-height']" :c="'myClassname'" />`
--
+- A PICTURE element, which is often your preferred method of showing an image on the page because it is adaptive to the user's screensize. If you use ACF fields, and return an image array data, you can use the following in your blade templates. You can pass in an option of `mobileFirst` if you need the mobile image to be a high resolution image, otherwise the smaller thumbnail size will load at mobile screen size. It will wrap a FIGURE element automatically if you provide a caption in the CMS, as well as TITLE and ALT attributes if provided.
+  - `<x-picture :image="$image" :mobileFirst="'true'" :c="'myClassname'" />`
 
 ## Theme structure
 
