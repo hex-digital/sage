@@ -1,4 +1,4 @@
-@include('partials.masthead')
+@include('sections.masthead')
 
 <div class="content__wrapper / has-menu-animation">
 
@@ -12,4 +12,4 @@
 
 </div>
 
-@include('partials.footer')
+@include('sections.footer')

@@ -1,4 +1,4 @@
-@include('partials.masthead')
+@include('sections.masthead')
 
 <div class="content__wrapper / has-menu-animation container">
 
@@ -10,21 +10,17 @@
     <div class="md:u-flex md:u-grow u-gap-md">
   @endif
 
-    <main id="site-content" class="md:u-grow md:u-basis-2/3">
+    <main id="site-content" class="site-content md:u-grow md:u-basis-2/3">
       @yield('content')
     </main>
 
-    @hasSection('sidebar')
-      <aside id="site-sidebar" class="sidebar md:u-basis-1/3">
-        @yield('sidebar')
-      </aside>
-    @endif
+    @include('sections.sidebar')
 
-    @hasSection('sidebar')
+  @hasSection('sidebar')
     </div>
   @endif
 
 
 </div>
 
-@include('partials.footer')
+@include('sections.footer')
