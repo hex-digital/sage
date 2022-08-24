@@ -1,6 +1,7 @@
 import {domReady} from '@roots/sage/client';
 import {$} from 'jquery';
 import { HEX } from './hex'
+import { MASTHEAD } from './masthead'
 
 
 /**
@@ -15,6 +16,7 @@ const main = async (err) => {
   $ = window.jQuery;
   $(window).responsive();
   HEX.init($);
+  MASTHEAD.init($);
 };
 
 /**

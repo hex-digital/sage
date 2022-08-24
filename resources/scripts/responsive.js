@@ -3,7 +3,6 @@
 
 /*
 	Responsive Screen detect ver 2.0
-	andrewfairlie.net
 */
 (function ($) {
 
@@ -34,7 +33,6 @@
 
 		// Store settings on window object
 		$(window).data('responsive', settings);
-		// console.log( $(window).data('responsive') );
 	};
 
 	$(window).resize($.fn.responsive);
